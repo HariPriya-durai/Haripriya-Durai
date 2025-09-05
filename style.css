@@ -81,38 +81,87 @@ a {
   }
 }
 
-section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: 40px auto;
-  background: #1e1e1e;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ====== About Me Auto-Scrolling Carousel ====== */
+.about-me-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  overflow: hidden;
 }
 
-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 10px 20px rgba(255,64,129,0.3);
-}
-
-section h2 {
-  color: #ff4081;
-}
-
-/* Links Styling */
-a {
-  color: #ff4081;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ff6a00;
-}
-
-/* Smooth Scroll */
-html {
+.carousel-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+.about-segment {
+  flex: 0 0 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  scroll-snap-align: start;
+}
+
+.about-segment h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about-segment p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Scroll buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 102, 0, 0.8);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+  background-color: #e05500;
+}
+
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .about-segment {
+    flex: 0 0 250px;
+    padding: 20px 15px;
+  }
+  .about-segment h2 {
+    font-size: 1.5rem;
+  }
+  .about-segment p {
+    font-size: 0.95rem;
+  }
+  .scroll-btn {
+    font-size: 1.5rem;
+    padding: 8px 12px;
+  }
 }
 
 /* =========================
@@ -136,6 +185,7 @@ html {
     font-size: 1rem;
   }
 }
+
 
 
 
