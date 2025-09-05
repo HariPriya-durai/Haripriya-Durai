@@ -13,56 +13,58 @@ body {
 /* =========================
    Header Styling
 ========================= */
-.profile-img {
-    width: 60px;          /* adjust the size */
-    height: 60px;         /* keep it square */
-    border-radius: 50%;   /* makes it circular */
-    position: absolute;   /* place it on top-left */
-    top: 20px;            /* distance from top */
-    left: 20px;           /* distance from left */
-    object-fit: cover;    /* ensures image covers the circle */
-    border: 2px solid white; /* optional: adds a border */
-}
+/* =========================
+   Header Styling
+========================= */
 
-
+/* Header background */
 header {
-    background-image: url('techdark-bg.jpg'); /* if in the same folder as CSS */
-    background-size: cover; /* makes image cover entire header */
-    background-position: center; /* centers the image */
-    background-repeat: no-repeat; /* avoids tiling */
-    height: 400px; /* set header height */
+    background-image: url('techdark-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
 }
 
+/* Hero container */
 .hero {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;         /* vertically center content */
-  justify-content: center;     /* horizontally center content */
+  align-items: center;       
+  justify-content: center;   
   padding: 60px 20px;
-  background: url('tech-dark-bg.jpg') no-repeat center center/cover;
-  position: relative;
+  background: url('techdark-bg.jpg') no-repeat center center/cover;
+  position: relative;        /* for absolute positioning of profile image */
   gap: 20px;
-  text-align: center;          /* center text inside header-content */
+  text-align: center;        
 }
 
+/* Floating circular profile image */
 .header-left {
-  flex: 0 0 auto;
+  position: absolute;        /* float over header */
+  top: 20px;
+  left: 20px;
+  z-index: 10;
 }
 
 .profile-pic {
   width: 120px;
   height: 120px;
-  border-radius: 50%;          /* circular shape */
+  border-radius: 50%;        
   border: 3px solid #ff4081;
+  object-fit: cover;
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .profile-pic:hover {
   transform: scale(1.1);
 }
 
+/* Header content */
 .header-content {
   flex: 1 1 300px;
+  max-width: 800px;
 }
 
 .header-content h1 {
@@ -77,7 +79,7 @@ header {
   color: #dddddd;
 }
 
-/* Hero Buttons Container */
+/* Hero buttons */
 .hero-buttons {
   display: flex;
   justify-content: center;
@@ -120,6 +122,26 @@ header {
 
 .cta-button:hover::after {
   opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+  }
+  .header-content h1 {
+    font-size: 2rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+  .hero {
+    text-align: center;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
 }
 
 /* =========================
@@ -180,6 +202,7 @@ html {
     font-size: 1rem;
   }
 }
+
 
 
 
