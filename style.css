@@ -16,11 +16,13 @@ body {
 .hero {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: center;         /* vertically center content */
+  justify-content: center;     /* horizontally center content */
   padding: 60px 20px;
   background: url('tech-dark-bg.jpg') no-repeat center center/cover;
   position: relative;
   gap: 20px;
+  text-align: center;          /* center text inside header-content */
 }
 
 .header-left {
@@ -30,7 +32,7 @@ body {
 .profile-pic {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border-radius: 50%;          /* circular shape */
   border: 3px solid #ff4081;
   transition: transform 0.3s ease;
 }
@@ -58,6 +60,7 @@ body {
 /* Hero Buttons Container */
 .hero-buttons {
   display: flex;
+  justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
 }
