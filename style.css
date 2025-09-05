@@ -12,6 +12,14 @@ a {
 
 /* ====== Body Background ====== */
 body {
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* Add any other body background styles as needed */
+}
+
+body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: url('bg.jpg') no-repeat center center/cover;
@@ -152,6 +160,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
