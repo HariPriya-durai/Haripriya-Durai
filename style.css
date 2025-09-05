@@ -18,10 +18,6 @@ body {
 ========================= */
 
 /* Header background */
-/* =========================
-   Header Styling
-========================= */
-
 header {
     background-image: url('techdark-bg.jpg'); 
     background-size: cover;
@@ -37,32 +33,65 @@ header {
   justify-content: center;   
   padding: 60px 20px;
   background: url('techdark-bg.jpg') no-repeat center center/cover;
-  position: relative;        /* needed for absolute positioning */
+  position: relative;        
   gap: 20px;
-  text-align: left;          /* left-aligned text to allow profile overlap */
+  text-align: left;          
 }
 
-/* Floating circular profile image on right */
+/* Floating circular profile image on right with halo */
 .header-left {
-  position: absolute;       /* float over header */
-  top: 50%;                 /* vertical center */
-  right: 20px;              /* float on right side */
-  transform: translateY(-50%); /* vertically center image */
+  position: absolute;       
+  top: 50%;                 
+  right: 20px;              
+  transform: translateY(-50%);
   z-index: 10;
 }
 
+/* Multi-layered pulsing halo */
+.header-left::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255,64,129,0.3) 0%, rgba(255,144,0,0.2) 60%, rgba(255,255,255,0) 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(25px);
+  z-index: -1;
+  animation: pulseHalo 3s infinite ease-in-out;
+}
+
+@keyframes pulseHalo {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Profile image */
 .profile-pic {
-  width: 150px;             /* bigger size */
+  width: 150px;             
   height: 150px;
   border-radius: 50%;       
   border: 4px solid white;
   object-fit: cover;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4); /* floating effect */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4); 
   transition: transform 0.3s ease;
+  position: relative;        
 }
 
 .profile-pic:hover {
-  transform: scale(1.1);     /* hover effect */
+  transform: scale(1.1);
 }
 
 /* Header content */
@@ -134,6 +163,11 @@ header {
     width: 120px;
     height: 120px;
   }
+  .header-left::before {
+    width: 140px;
+    height: 140px;
+    filter: blur(20px);
+  }
   .header-content h1 {
     font-size: 2.5rem;
   }
@@ -144,7 +178,7 @@ header {
 
 @media (max-width: 768px) {
   .profile-pic {
-    position: relative;       /* stack on mobile */
+    position: relative;       
     top: auto;
     right: auto;
     transform: none;
@@ -152,12 +186,27 @@ header {
     width: 100px;
     height: 100px;
   }
+
+  .header-left::before {
+    display: none;           
+  }
+
   .hero {
+    flex-direction: column;
     text-align: center;
     padding: 40px 20px;
   }
+
   .hero-buttons {
     justify-content: center;
+  }
+
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
   }
 }
 
@@ -219,6 +268,7 @@ html {
     font-size: 1rem;
   }
 }
+
 
 
 
