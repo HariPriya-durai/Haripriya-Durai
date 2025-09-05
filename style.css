@@ -13,6 +13,14 @@ body {
 /* =========================
    Header Styling
 ========================= */
+header {
+    background-image: url('techdark-bg.jpg'); /* if in the same folder as CSS */
+    background-size: cover; /* makes image cover entire header */
+    background-position: center; /* centers the image */
+    background-repeat: no-repeat; /* avoids tiling */
+    height: 400px; /* set header height */
+}
+
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -160,3 +168,4 @@ html {
     font-size: 1rem;
   }
 }
+
