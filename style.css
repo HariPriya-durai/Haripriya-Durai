@@ -18,18 +18,18 @@ body {
 ========================= */
 
 /* Header background */
-header {
-    background-image: url('techdark-bg.jpg'); 
+header.hero {
+    background-image: url('tech-dark-bg.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 400px;
-    position: relative; /* needed for absolute profile image */
-    text-align: center;
+    position: relative; /* for absolute positioning of profile image */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 40px 20px;
 }
 
@@ -110,24 +110,38 @@ header {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .profile-img {
         width: 100px;
         height: 100px;
     }
-
     .header-content h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
-
     .tagline {
         font-size: 1rem;
     }
 }
 
-/* =========================
-   Sections
-========================= */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 80px;
+        height: 80px;
+        top: 15px;
+        left: 15px;
+    }
+    .header-content h1 {
+        font-size: 2rem;
+    }
+    .tagline {
+        font-size: 0.95rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
 section {
   padding: 40px 20px;
   max-width: 800px;
@@ -183,6 +197,7 @@ html {
     font-size: 1rem;
   }
 }
+
 
 
 
