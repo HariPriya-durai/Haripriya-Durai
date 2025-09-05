@@ -1,63 +1,72 @@
 /* =========================
-   General Page Styling
+   General Dark Theme Styling
 ========================= */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f6f9;
-  color: #2c3e50;
+  background: #121212;
+  color: #ffffff;
   line-height: 1.6;
 }
 
 /* =========================
-   Header Styling (Fun & Vibrant)
+   Header Styling
 ========================= */
 .hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  color: #6a1b9a;
-  font-family: 'Arial', sans-serif;
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 60px 20px;
+  background: url('tech-dark-bg.jpg') no-repeat center center/cover;
+  position: relative;
+  gap: 20px;
 }
 
-.hero h1 {
+.header-left {
+  flex: 0 0 auto;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #ff4081;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+.header-content {
+  flex: 1 1 300px;
+}
+
+.header-content h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.highlight {
-  background: linear-gradient(90deg, #ff6a00, #ff4081);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: bold;
-  animation: gradientAnimation 3s ease infinite;
-  background-size: 200% 200%;
+  margin: 0;
+  color: #ffffff;
 }
 
 .tagline {
   font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #9c27b0;
+  margin: 10px 0 20px 0;
+  color: #dddddd;
 }
 
 /* Hero Buttons Container */
 .hero-buttons {
   display: flex;
-  justify-content: center;
-  gap: 15px; /* Space between buttons */
-  flex-wrap: wrap; /* Wrap on smaller screens */
-  margin-top: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-/* CTA Buttons Styling */
 .cta-button {
   display: inline-block;
   padding: 12px 25px;
   font-size: 1rem;
-  color: #fff;
+  color: #ffffff;
   background: #ff4081;
   border-radius: 25px;
   text-decoration: none;
@@ -67,14 +76,12 @@ body {
   overflow: hidden;
 }
 
-/* Button Hover Animation */
 .cta-button:hover {
   background: #ff6a00;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 20px rgba(255, 106, 0, 0.4);
 }
 
-/* Button Ripple Effect */
 .cta-button::after {
   content: '';
   position: absolute;
@@ -92,82 +99,29 @@ body {
   opacity: 1;
 }
 
-/* Gradient Animation for Name */
-@keyframes gradientAnimation {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-/* Fade-in Effect */
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
 /* =========================
    Sections
 ========================= */
 section {
   padding: 40px 20px;
   max-width: 800px;
-  margin: auto;
-  background: white;
-  margin-bottom: 20px;
+  margin: 40px auto;
+  background: #1e1e1e;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(255,64,129,0.3);
 }
 
 section h2 {
   color: #ff4081;
 }
 
-/* =========================
-   Chatbot Container
-========================= */
-.chat-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-  padding: 10px;
-}
-
-#chat-box {
-  height: 200px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 5px;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-#user-input {
-  width: 70%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  width: 25%;
-  padding: 6px;
-  background: #ff4081;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #ff6a00;
-}
-
-/* =========================
-   Additional Fun Styling
-========================= */
+/* Links Styling */
 a {
   color: #ff4081;
   text-decoration: none;
@@ -177,7 +131,29 @@ a:hover {
   color: #ff6a00;
 }
 
-/* Optional: Smooth Scroll */
+/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header-left {
+    margin-bottom: 20px;
+  }
+
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
 }
