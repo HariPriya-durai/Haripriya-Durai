@@ -31,91 +31,87 @@
 </body>
 </html>
 
-  <<!-- =========================
-     About Me Auto-Scrolling Carousel
-========================= -->
-<section class="about-me-carousel">
+ <body>
+  <!-- =========================
+       Header
+  ========================= -->
+  <header class="hero">
+    <img src="profileimage.jpeg" alt="Haripriya Durai" class="profile-img">
+    <div class="header-content">
+      <h1>Haripriya Durai</h1>
+      <p class="tagline">“Empowering Ideas Through Code & Creativity 🚀”</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="cta-button">See My Work 🎨</a>
+        <a href="https://www.linkedin.com/in/hari-priya-7741b8193/" class="cta-button" target="_blank">LinkedIn Profile 🚀</a>
+      </div>
+    </div>
+  </header>
 
-  <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
+  <!-- =========================
+       About Me Sliding Section
+  ========================= -->
+  <section class="about-me-slider">
+    <button class="slide-btn left" onclick="prevSlide()">&#10094;</button>
 
-  <div class="carousel-wrapper">
-    <div class="about-segment">
-      <h2>About Me</h2>
-      <p>
-        I am a creative and curious thinker passionate about technology. I enjoy understanding how digital systems work, from building interactive user interfaces to designing robust backend systems. I constantly explore new technologies, focusing on cloud computing, AI, machine learning, and cybersecurity, to create innovative solutions that make an impact.
-      </p>
+    <div class="slide-wrapper">
+      <div class="about-slide active">
+        <h2>About Me</h2>
+        <p>
+          I am a creative and curious thinker passionate about technology. I enjoy understanding how digital systems work, from building interactive user interfaces to designing robust backend systems. I constantly explore new technologies, focusing on cloud computing, AI, machine learning, and cybersecurity, to create innovative solutions that make an impact.
+        </p>
+      </div>
+
+      <div class="about-slide">
+        <h2>Personal Interests</h2>
+        <p>
+          I love exploring creativity through art, design, and content creation. I enjoy designing clothes, making videos, cooking, reading—especially Harry Potter—and traveling. I am learning entrepreneurship, preparing to launch a business, while connecting with people and gaining new experiences.
+        </p>
+      </div>
+
+      <div class="about-slide">
+        <h2>Educational Background</h2>
+        <p>
+          I am pursuing B.Tech in Computer Science at PRIST University, Thanjavur, with a CGPA of 8.2. My schooling in Kumbakonam includes excellent results: 97% in 10th and 85% in 12th standard.
+        </p>
+      </div>
+
+      <div class="about-slide">
+        <h2>Career Goals</h2>
+        <p>
+          I aim to leverage my computer science knowledge and design skills to build visually appealing and user-friendly web interfaces. My goal is to create seamless experiences and innovative front-end solutions that align with business objectives and enhance brand presence.
+        </p>
+      </div>
     </div>
 
-    <div class="about-segment">
-      <h2>Personal Interests</h2>
-      <p>
-        I am adventurous and love exploring creativity through art, design, and content creation. I enjoy designing clothes, making engaging videos, cooking, reading—especially the Harry Potter series—and traveling. I am also learning entrepreneurship, preparing to launch a business, while connecting with people and gaining new experiences along the way.
-      </p>
-    </div>
+    <button class="slide-btn right" onclick="nextSlide()">&#10095;</button>
+  </section>
 
-    <div class="about-segment">
-      <h2>Educational Background</h2>
-      <p>
-        I am pursuing a B.Tech in Computer Science at PRIST University, Thanjavur, with a CGPA of 8.2. I completed my schooling in Kumbakonam with excellent academic records, achieving 97% in 10th standard and 85% in 12th standard.
-      </p>
-    </div>
+  <script>
+    const slides = document.querySelectorAll('.about-slide');
+    let currentIndex = 0;
 
-    <div class="about-segment">
-      <h2>Career Goals</h2>
-      <p>
-        I aim to leverage my computer science knowledge and design skills to build visually appealing and user-friendly web interfaces. My goal is to create seamless experiences and innovative front-end solutions that align with business objectives and enhance brand presence.
-      </p>
-    </div>
-
-    <!-- Duplicate segments for seamless looping -->
-    <div class="about-segment">
-      <h2>About Me</h2>
-      <p>
-        I am a creative and curious thinker passionate about technology. I enjoy understanding how digital systems work, from building interactive user interfaces to designing robust backend systems. I constantly explore new technologies, focusing on cloud computing, AI, machine learning, and cybersecurity, to create innovative solutions that make an impact.
-      </p>
-    </div>
-    <div class="about-segment">
-      <h2>Personal Interests</h2>
-      <p>
-        I am adventurous and love exploring creativity through art, design, and content creation. I enjoy designing clothes, making engaging videos, cooking, reading—especially the Harry Potter series—and traveling. I am also learning entrepreneurship, preparing to launch a business, while connecting with people and gaining new experiences along the way.
-      </p>
-    </div>
-  </div>
-
-  <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
-
-</section>
-
-<script>
-  const wrapper = document.querySelector('.carousel-wrapper');
-  const segmentWidth = document.querySelector('.about-segment').offsetWidth + 20; // 20 = gap
-
-  // Auto-scroll every 50ms
-  let autoScroll = setInterval(() => {
-    wrapper.scrollLeft += 1;
-    // Reset to beginning for seamless loop
-    if (wrapper.scrollLeft >= wrapper.scrollWidth / 2) {
-      wrapper.scrollLeft = 0;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'slide-in-right', 'slide-out-left', 'slide-in-left', 'slide-out-right');
+        if (i === index) slide.classList.add('active');
+      });
     }
-  }, 20);
 
-  function scrollLeft() {
-    wrapper.scrollBy({ left: -segmentWidth, behavior: 'smooth' });
-  }
+    function nextSlide() {
+      const prevIndex = currentIndex;
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[prevIndex].classList.add('slide-out-left');
+      slides[currentIndex].classList.add('slide-in-right', 'active');
+    }
 
-  function scrollRight() {
-    wrapper.scrollBy({ left: segmentWidth, behavior: 'smooth' });
-  }
-
-  // Pause auto-scroll on hover
-  wrapper.addEventListener('mouseenter', () => clearInterval(autoScroll));
-  wrapper.addEventListener('mouseleave', () => {
-    autoScroll = setInterval(() => {
-      wrapper.scrollLeft += 1;
-      if (wrapper.scrollLeft >= wrapper.scrollWidth / 2) wrapper.scrollLeft = 0;
-    }, 20);
-  });
-</script>
+    function prevSlide() {
+      const prevIndex = currentIndex;
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      slides[prevIndex].classList.add('slide-out-right');
+      slides[currentIndex].classList.add('slide-in-left', 'active');
+    }
+  </script>
+</body>
 
        Projects Section
   ========================= -->
@@ -147,6 +143,7 @@
 
 </body>
 </html>
+
 
 
 
