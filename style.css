@@ -1,4 +1,6 @@
-/* General Page Styling */
+/* =========================
+   General Page Styling
+========================= */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -8,24 +10,72 @@ body {
   line-height: 1.6;
 }
 
-header {
+/* =========================
+   Header Styling (Fun & Vibrant)
+========================= */
+.hero {
   text-align: center;
-  background: #007bff;
-  color: white;
-  padding: 40px 20px;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #6a1b9a;
+  font-family: 'Arial', sans-serif;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5em;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-header p {
-  margin-top: 10px;
-  font-size: 1.2em;
+.highlight {
+  background: linear-gradient(90deg, #ff6a00, #ff4081);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  animation: gradientAnimation 3s ease infinite;
+  background-size: 200% 200%;
 }
 
-/* Sections */
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #9c27b0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: #fff;
+  background: #ff4081;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
+}
+
+.cta-button:hover {
+  background: #ff6a00;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 106, 0, 0.4);
+}
+
+/* Gradient Animation for Name */
+@keyframes gradientAnimation {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* =========================
+   Sections
+========================= */
 section {
   padding: 40px 20px;
   max-width: 800px;
@@ -37,10 +87,12 @@ section {
 }
 
 section h2 {
-  color: #007bff;
+  color: #ff4081;
 }
 
-/* Chatbot Container */
+/* =========================
+   Chatbot Container
+========================= */
 .chat-container {
   position: fixed;
   bottom: 20px;
@@ -48,37 +100,4 @@ section h2 {
   width: 300px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-  padding: 10px;
-}
-
-#chat-box {
-  height: 200px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 5px;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-#user-input {
-  width: 70%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  width: 25%;
-  padding: 6px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #0056b3;
-}
-
+  box-shadow: 0px 4px 10px rgba(0,0,
