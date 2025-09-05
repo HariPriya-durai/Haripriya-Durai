@@ -13,11 +13,17 @@ body {
 /* =========================
    Header Styling
 ========================= */
+.profile-img {
+    width: 60px;          /* adjust the size */
+    height: 60px;         /* keep it square */
+    border-radius: 50%;   /* makes it circular */
+    position: absolute;   /* place it on top-left */
+    top: 20px;            /* distance from top */
+    left: 20px;           /* distance from left */
+    object-fit: cover;    /* ensures image covers the circle */
+    border: 2px solid white; /* optional: adds a border */
+}
 
-<header>
-    <img src="profileimage.png" alt="Profile" class="profile-img">
-    <!-- Other header content -->
-</header>
 
 header {
     background-image: url('techdark-bg.jpg'); /* if in the same folder as CSS */
@@ -174,5 +180,6 @@ html {
     font-size: 1rem;
   }
 }
+
 
 
