@@ -18,6 +18,10 @@ body {
 ========================= */
 
 /* Header background */
+/* =========================
+   Header Styling
+========================= */
+
 header {
     background-image: url('techdark-bg.jpg'); 
     background-size: cover;
@@ -26,7 +30,6 @@ header {
     height: 400px;
 }
 
-/* Hero container */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -34,37 +37,38 @@ header {
   justify-content: center;   
   padding: 60px 20px;
   background: url('techdark-bg.jpg') no-repeat center center/cover;
-  position: relative;        /* for absolute positioning of profile image */
+  position: relative;        /* needed for absolute positioning */
   gap: 20px;
-  text-align: center;        
+  text-align: left;          /* left-aligned text to allow profile overlap */
 }
 
-/* Floating circular profile image */
+/* Floating circular profile image on right */
 .header-left {
-  position: absolute;        /* float over header */
-  top: 20px;
-  left: 20px;
+  position: absolute;       /* float over header */
+  top: 50%;                 /* vertical center */
+  right: 20px;              /* float on right side */
+  transform: translateY(-50%); /* vertically center image */
   z-index: 10;
 }
 
 .profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;        
-  border: 3px solid #ff4081;
+  width: 150px;             /* bigger size */
+  height: 150px;
+  border-radius: 50%;       
+  border: 4px solid white;
   object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4); /* floating effect */
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .profile-pic:hover {
-  transform: scale(1.1);
+  transform: scale(1.1);     /* hover effect */
 }
 
 /* Header content */
 .header-content {
   flex: 1 1 300px;
-  max-width: 800px;
+  max-width: 600px;
 }
 
 .header-content h1 {
@@ -82,7 +86,7 @@ header {
 /* Hero buttons */
 .hero-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 15px;
   flex-wrap: wrap;
 }
@@ -125,19 +129,32 @@ header {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .profile-pic {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
   }
   .header-content h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .tagline {
     font-size: 1rem;
   }
+}
+
+@media (max-width: 768px) {
+  .profile-pic {
+    position: relative;       /* stack on mobile */
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+  }
   .hero {
     text-align: center;
+    padding: 40px 20px;
   }
   .hero-buttons {
     justify-content: center;
@@ -202,6 +219,7 @@ html {
     font-size: 1rem;
   }
 }
+
 
 
 
