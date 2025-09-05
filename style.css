@@ -13,6 +13,12 @@ body {
 /* =========================
    Header Styling
 ========================= */
+
+<header>
+    <img src="profileimage.png" alt="Profile" class="profile-img">
+    <!-- Other header content -->
+</header>
+
 header {
     background-image: url('techdark-bg.jpg'); /* if in the same folder as CSS */
     background-size: cover; /* makes image cover entire header */
@@ -168,4 +174,5 @@ html {
     font-size: 1rem;
   }
 }
+
 
