@@ -12,10 +12,8 @@
        Header
   ========================= -->
   <header class="hero">
-
     <!-- Profile image top-left -->
     <img src="profileimage.jpeg" alt="Haripriya Durai" class="profile-img">
-
     <!-- Header text -->
     <div class="header-content">
       <h1>Haripriya Durai</h1>
@@ -25,80 +23,43 @@
         <a href="https://www.linkedin.com/in/hari-priya-7741b8193/" class="cta-button" target="_blank">LinkedIn Profile 🚀</a>
       </div>
     </div>
-
   </header>
-
-</body>
-</html>
-
- <body>
 
   <!-- =========================
        About Me Sliding Section
   ========================= -->
   <section class="about-me-slider">
     <button class="slide-btn left" onclick="prevSlide()">&#10094;</button>
-
     <div class="slide-wrapper">
       <div class="about-slide active">
         <h2>About Me</h2>
         <p>
-          I am a creative and curious thinker passionate about technology. I enjoy understanding how digital systems work, from building interactive user interfaces to designing robust backend systems. I constantly explore new technologies, focusing on cloud computing, AI, machine learning, and cybersecurity, to create innovative solutions that make an impact.
+          I am a creative and curious thinker passionate about technology. I enjoy understanding how digital systems work, from building interactive user interfaces to designing robust backend systems[...]
         </p>
       </div>
-
       <div class="about-slide">
         <h2>Personal Interests</h2>
         <p>
-          I love exploring creativity through art, design, and content creation. I enjoy designing clothes, making videos, cooking, reading—especially Harry Potter—and traveling. I am learning entrepreneurship, preparing to launch a business, while connecting with people and gaining new experiences.
+          I love exploring creativity through art, design, and content creation. I enjoy designing clothes, making videos, cooking, reading—especially Harry Potter—and traveling. I am learning ent[...]
         </p>
       </div>
-
       <div class="about-slide">
         <h2>Educational Background</h2>
         <p>
           I am pursuing B.Tech in Computer Science at PRIST University, Thanjavur, with a CGPA of 8.2. My schooling in Kumbakonam includes excellent results: 97% in 10th and 85% in 12th standard.
         </p>
       </div>
-
       <div class="about-slide">
         <h2>Career Goals</h2>
         <p>
-          I aim to leverage my computer science knowledge and design skills to build visually appealing and user-friendly web interfaces. My goal is to create seamless experiences and innovative front-end solutions that align with business objectives and enhance brand presence.
+          I aim to leverage my computer science knowledge and design skills to build visually appealing and user-friendly web interfaces. My goal is to create seamless experiences and innovative front[...]
         </p>
       </div>
     </div>
-
     <button class="slide-btn right" onclick="nextSlide()">&#10095;</button>
   </section>
 
-  <script>
-    const slides = document.querySelectorAll('.about-slide');
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active', 'slide-in-right', 'slide-out-left', 'slide-in-left', 'slide-out-right');
-        if (i === index) slide.classList.add('active');
-      });
-    }
-
-    function nextSlide() {
-      const prevIndex = currentIndex;
-      currentIndex = (currentIndex + 1) % slides.length;
-      slides[prevIndex].classList.add('slide-out-left');
-      slides[currentIndex].classList.add('slide-in-right', 'active');
-    }
-
-    function prevSlide() {
-      const prevIndex = currentIndex;
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      slides[prevIndex].classList.add('slide-out-right');
-      slides[currentIndex].classList.add('slide-in-left', 'active');
-    }
-  </script>
-</body>
-
+  <!-- =========================
        Projects Section
   ========================= -->
   <section id="projects">
@@ -127,16 +88,31 @@
     <p>Phone: +91 12345 67890</p>
   </section>
 
+  <script>
+    const slides = document.querySelectorAll('.about-slide');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'slide-in-right', 'slide-out-left', 'slide-in-left', 'slide-out-right');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      const prevIndex = currentIndex;
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[prevIndex].classList.add('slide-out-left');
+      slides[currentIndex].classList.add('slide-in-right', 'active');
+    }
+
+    function prevSlide() {
+      const prevIndex = currentIndex;
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      slides[prevIndex].classList.add('slide-out-right');
+      slides[currentIndex].classList.add('slide-in-left', 'active');
+    }
+  </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
