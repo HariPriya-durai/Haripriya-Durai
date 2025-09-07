@@ -75,113 +75,60 @@ body {
 }
 
 .about-me-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 40px auto;
   overflow: hidden;
+  padding: 0 20px;
 }
 
 .slide-wrapper {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.slide-track {
   display: flex;
-  position: relative;
-  height: 200px; /* Adjust as needed */
+  transition: transform 0.5s ease-in-out;
 }
 
 .about-slide {
-  display: none;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  transition: opacity 0.5s, transform 0.5s;
-  opacity: 0;
-  z-index: 1;
-}
-
-.about-slide.active {
-  display: block;
-  opacity: 1;
-  position: relative;
-  z-index: 2;
-}
-/* === About Me Carousel Styling === */
-.about-me-carousel {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.carousel-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  scroll-behavior: smooth;
-  overflow-x: auto;
-  padding: 10px 0;
-  scrollbar-width: none; /* Firefox */
-}
-.carousel-track::-webkit-scrollbar {
-  display: none; /* Chrome */
-}
-
-.carousel-card {
-  background-color: #1e1e2f;
-  border-radius: 10px;
-  min-width: 280px;
-  max-width: 280px;
-  flex: 0 0 auto;
+  min-width: 33.33%; /* 3 slides visible at a time */
+  box-sizing: border-box;
   padding: 20px;
-  color: white;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
-.carousel-card:hover {
-  transform: scale(1.05);
-}
-
-.carousel-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #fff;
+  margin: 10px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
 }
 
-.carousel-btn {
-  background-color: #ff6600;
+.slide-btn {
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   font-size: 2rem;
-  color: white;
+  color: #fff;
   padding: 10px;
-  border-radius: 50%;
   cursor: pointer;
-  z-index: 1;
-}
-.carousel-btn:hover {
-  background-color: #e05500;
+  z-index: 10;
+  transition: background 0.3s;
 }
 
-.carousel-btn.left {
-  margin-right: 10px;
+.slide-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
-.carousel-btn.right {
-  margin-left: 10px;
-}
-
-/* === Mobile Styling === */
-@media (max-width: 600px) {
-  .carousel-card {
-    min-width: 80vw;
-    max-width: 80vw;
+/* Responsive */
+@media (max-width: 768px) {
+  .about-slide {
+    min-width: 100%; /* 1 slide at a time for mobile */
   }
 }
-
 
 /* =========================
    Responsive Design
@@ -204,6 +151,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
