@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,117 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haripriya Durai - Interactive Resume</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+  <!-- ====== HEADER ====== -->
+  <header class="hero">
+    <img src="profileimage.png" alt="Profile Image" class="profile-img">
+    <div class="header-content">
+      <h1>Haripriya Durai</h1>
+      <p class="tagline">Aspiring Software Engineer | Problem Solver</p>
+      <div class="hero-buttons">
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </header>
-<body>
 
-<header class="hero">
-  <img src="profileimage.png" alt="Profile Image" class="profile-img">
-  <div class="header-content">
-    <h1>Haripriya Durai</h1>
-    <p class="tagline">Aspiring Software Engineer | Problem Solver</p>
-    <div class="hero-buttons">
-      <a href="#about">About Me</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</header>
-
-<section class="about-me-slider">
-  <!-- Slider content here -->
-</section>
-
-<p>Phone: +91 12345 67890</p>
-
-<script src="script.js"></script>
-</body>
-
-
-<section class="about-me-slider">
-  <button class="slide-btn left" onclick="prevSlide()">&#10094;</button>
-  <button class="slide-btn left" onclick="prevSlide()" aria-label="Previous Slide">&#10094;</button>
-  <div class="slide-wrapper">
-    <div class="slide-track">
-      <div class="about-slide">
-        <div class="popup-tooltip">Know more about me!</div>
-        <h2>About Me</h2>
-        <p>I am a highly resilient and confident individual, driven by a deep curiosity for how technology works. My creative thinking allows me to approach challenges from unique angles, leading to innovative solutions. I possess the strength and determination to overcome any setback, and my proven ability to rebuild from the ground up makes me a valuable asset in dynamic and fast-paced environments. My passion for learning and problem-solving fuels my desire to constantly grow and contribute meaningfully.</p>
-      </div>
-      <div class="about-slide">
-        <div class="popup-tooltip">My hobbies and passions</div>
-        <h2>Personal Interests</h2>
-        <p>My interests outside of my professional life are diverse and fulfilling. I am a passionate cook and find creativity in both art and painting. I am also an avid reader, with a particular interest in the works of Ravinder Singh and the captivating world of Harry Potter. In my free time, I enjoy traveling and connecting with nature, which recharges my spirit. Above all, I am a family-oriented individual who cherishes these bonds, and I approach every new skill with a commitment to learning from the ground up.</p>
-      </div>
-      <div class="about-slide">
-        <div class="popup-tooltip">My academic journey</div>
-        <h2>Educational Background</h2>
-        <p>A highly motivated final-year B.Tech in Computer Science and Engineering student at P.R.I.S.T. University, Thanjavur, with an expected graduation in 2026. My academic journey is marked by a consistent record of excellence, evidenced by a strong CGPA of 8.2/10.0. This follows a stellar foundation, including a 97% score in my 10th standard (2016) and an 85% in my 12th standard (2018), demonstrating my dedication and a solid grasp of complex subjects. I am passionate about leveraging my skills to solve real-world problems..</p>
-      </div>
-      <div class="about-slide">
-        <div class="popup-tooltip">My vision and goals</div>
-        <h2>Career Goals</h2>
-        <p>I see the world of technology as a vast ocean of possibilities, and my career journey is about diving in to understand its depths. I am passionate about exploring new and different technologies and am excited to continually learn and acquire new "catches." My career objective is to join a global team where I can apply my skills and creativity to develop and launch innovative, world-class projects.</p>
+  <!-- ====== ABOUT ME SLIDER ====== -->
+  <section class="about-me-slider" id="about">
+    <button class="slide-btn left" onclick="prevSlide()" aria-label="Previous Slide">&#10094;</button>
+    <div class="slide-wrapper">
+      <div class="slide-track">
+        <div class="about-slide active">
+          <div class="popup-tooltip">Know more about me!</div>
+          <h2>About Me</h2>
+          <p>I am a highly resilient and confident individual, driven by a deep curiosity for how technology works...</p>
+        </div>
+        <div class="about-slide">
+          <div class="popup-tooltip">My hobbies and passions</div>
+          <h2>Personal Interests</h2>
+          <p>My interests outside of my professional life are diverse and fulfilling. I am a passionate cook, artist, and avid reader...</p>
+        </div>
+        <div class="about-slide">
+          <div class="popup-tooltip">My academic journey</div>
+          <h2>Educational Background</h2>
+          <p>A highly motivated final-year B.Tech student at P.R.I.S.T. University, Thanjavur...</p>
+        </div>
+        <div class="about-slide">
+          <div class="popup-tooltip">My vision and goals</div>
+          <h2>Career Goals</h2>
+          <p>I see the world of technology as a vast ocean of possibilities, and my career journey is about diving in...</p>
+        </div>
       </div>
     </div>
-  </div>
-  <button class="slide-btn right" onclick="nextSlide()">&#10095;</button>
-  <button class="slide-btn right" onclick="nextSlide()" aria-label="Next Slide">&#10095;</button>
-</section>
+    <button class="slide-btn right" onclick="nextSlide()" aria-label="Next Slide">&#10095;</button>
+  </section>
 
-<script>
-  const track = document.querySelector('.slide-track');
-  const slides = document.querySelectorAll('.about-slide');
-  let currentIndex = 0;
-  const visibleSlides = 3; // show 3 slides at a time
-  const visibleSlides = Math.min(1, slides.length); // only 1 at a time
-
-  function updateSlider() {
-    const slideWidth = slides[0].offsetWidth + 20; // include margin
-
-    }
-  }
-
-  // initialize
-  window.addEventListener("resize", updateSlider);
-  updateSlider();
-</script>
-
+  <!-- ====== CONTACT INFO ====== -->
+  <section id="contact">
     <p>Phone: +91 12345 67890</p>
   </section>
 
-  <script>
-    const slides = document.querySelectorAll('.about-slide');
-    let currentIndex = 0;
+  <!-- ====== CHATBOT ====== -->
+  <section id="chatbot">
+    <div id="chat-box" class="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button id="send-btn">Send</button>
+  </section>
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active', 'slide-in-right', 'slide-out-left', 'slide-in-left', 'slide-out-right');
-        if (i === index) slide.classList.add('active');
-      });
-    }
-
-    function nextSlide() {
-      const prevIndex = currentIndex;
-      currentIndex = (currentIndex + 1) % slides.length;
-      slides[prevIndex].classList.add('slide-out-left');
-      slides[currentIndex].classList.add('slide-in-right', 'active');
-    }
-
-    function prevSlide() {
-      const prevIndex = currentIndex;
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      slides[prevIndex].classList.add('slide-out-right');
-      slides[currentIndex].classList.add('slide-in-left', 'active');
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
