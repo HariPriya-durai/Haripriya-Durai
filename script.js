@@ -1,32 +1,36 @@
-/* ====== ABOUT ME SLIDER ====== */
+//* ====== ABOUT ME SLIDER ====== */
 const slideTrack = document.querySelector('.slide-track');
 const slides = document.querySelectorAll('.about-slide');
 let currentIndex = 0;
 
 function updateSlider() {
-  const slideWidth = slides[0].offsetWidth + 20; // slide width + margin
-  slideTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  slideTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
 function nextSlide() {
-  if (currentIndex < slides.length - 1) {
-    currentIndex++;
-  } else {
-    currentIndex = 0;
-  }
+  currentIndex = (currentIndex + 1) % slides.length;
   updateSlider();
 }
 
 function prevSlide() {
-  if (currentIndex > 0) {
-    currentIndex--;
-  } else {
-    currentIndex = slides.length - 1;
-  }
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
   updateSlider();
 }
 
-window.addEventListener('resize', updateSlider);
+/* Hover to preview next slide */
+slides.forEach((slide, index) => {
+  slide.addEventListener('mouseenter', () => {
+    if (index < slides.length - 1) {
+      slideTrack.style.transform = `translateX(-${(index + 1) * 100}%)`;
+    }
+  });
+  slide.addEventListener('mouseleave', () => {
+    updateSlider();
+  });
+});
+
+updateSlider();
+
 
 /* ====== CHATBOT ====== */
 const chatBox = document.getElementById('chat-box');
@@ -53,3 +57,4 @@ sendBtn.addEventListener('click', sendMessage);
 userInput.addEventListener('keypress', function(e) {
   if (e.key === 'Enter') sendMessage();
 });
+
