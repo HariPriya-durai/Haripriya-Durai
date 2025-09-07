@@ -107,23 +107,13 @@ body, html {
 }
 
 /* ====== ABOUT ME SLIDER ====== */
-.section-title {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 30px;
-  color: #ff6600;
-  font-weight: bold;
-}
-
+/* ====== ABOUT ME SLIDER (Single Slide at a Time) ====== */
 .about-me-slider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   width: 100%;
-  overflow: hidden;
+  max-width: 600px;
   margin: 40px auto;
-  padding: 0 20px;
+  overflow: hidden;
 }
 
 .slide-wrapper {
@@ -133,28 +123,27 @@ body, html {
 
 .slide-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 
-/* ====== ABOUT ME SLIDER ENHANCED ====== */
+/* Each slide fills container */
 .about-slide {
-  flex: 0 0 auto;
-  width: clamp(280px, 30vw, 350px);
-  height: auto;
-  margin: 10px;
-  padding: 25px;
+  flex: 0 0 100%; /* Only one slide visible */
+  margin: 0;
+  padding: 40px 25px;
   border-radius: 15px;
   text-align: center;
   color: #fff;
+  box-sizing: border-box;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-slide:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-/* Slide Icon */
+/* Icon */
 .slide-icon {
   font-size: 2.5rem;
   margin-bottom: 15px;
@@ -174,40 +163,31 @@ body, html {
   font-weight: bold;
 }
 
-/* Unique backgrounds per slide */
+/* Backgrounds */
 .about-bg-1 { background: linear-gradient(135deg, #ff7e5f, #feb47b); }
 .about-bg-2 { background: linear-gradient(135deg, #6a11cb, #2575fc); }
 .about-bg-3 { background: linear-gradient(135deg, #11998e, #38ef7d); }
 .about-bg-4 { background: linear-gradient(135deg, #f7971e, #ffd200); }
 
-.about-slide:hover {
-  transform: scale(1.08);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
-  border-color: #ff6600;
-}
-
-/* ====== SLIDER BUTTONS ====== */
+/* Slider Arrows */
 .slide-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.3);
-  border-radius: 50%;
+  background: rgba(0,0,0,0.4);
   border: none;
   font-size: 2rem;
-  color: #ff6600;
+  color: #fff;
   padding: 10px 15px;
   cursor: pointer;
+  border-radius: 50%;
   z-index: 10;
   transition: background 0.3s;
 }
-
-.slide-btn:hover {
-  background: rgba(255,255,255,0.6);
-}
-
 .slide-btn.left { left: 10px; }
 .slide-btn.right { right: 10px; }
+.slide-btn:hover { background: rgba(0,0,0,0.7); }
+
 
 /* ====== PROJECTS ====== */
 .projects-container {
@@ -316,5 +296,6 @@ body, html {
 @media (max-width: 768px) {
   .about-slide { width: 80vw; height: auto; }
 }
+
 
 
