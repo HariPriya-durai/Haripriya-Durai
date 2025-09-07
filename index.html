@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haripriya Durai - Interactive Resume</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- ====== HEADER ====== -->
-  <header class="hero">
+<header class="hero">
+  <div class="hero-container">
     <img src="profileimage.jpeg" alt="Profile Image" class="profile-img">
     <div class="header-content">
       <h1>Haripriya Durai</h1>
@@ -19,81 +9,99 @@
         <a href="https://www.linkedin.com/in/hari-priya-7741b8193/" target="_blank">LinkedIn</a>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- ====== ABOUT ME SLIDER ====== -->
-  <section class="about-me-slider" id="about">
-    <button class="slide-btn left" onclick="prevSlide('about')">&#10094;</button>
-    <div class="slide-wrapper">
-      <div class="slide-track">
-        <div class="about-slide active">
-          <div class="popup-tooltip">Know more about me!</div>
-          <h2>About Me</h2>
-          <p>I am a highly resilient and confident individual, driven by a deep curiosity for how technology works...</p>
-        </div>
-        <div class="about-slide">
-          <div class="popup-tooltip">My hobbies and passions</div>
-          <h2>Personal Interests</h2>
-          <p>My interests outside of my professional life are diverse and fulfilling...</p>
-        </div>
-        <div class="about-slide">
-          <div class="popup-tooltip">Educational Background</div>
-          <h2>Educational Background</h2>
-          <p>A highly motivated final-year B.Tech in Computer Science and Engineering student...</p>
-        </div>
-        <div class="about-slide">
-          <div class="popup-tooltip">My vision and goals</div>
-          <h2>Career Goals</h2>
-          <p>Driven by a deep curiosity for the world of technology...</p>
-        </div>
+<!-- LIKE ABOUT ME TITLE -->
+<section class="section-title-wrapper">
+  <h2>About Me</h2>
+</section>
+
+<!-- ABOUT ME SLIDER -->
+<section class="about-me-slider" id="about">
+  <button class="slide-btn left" onclick="prevSlide('about')">&#10094;</button>
+  <div class="slide-wrapper">
+    <div class="slide-track">
+      <div class="about-slide active">
+        <h2>About Me</h2>
+        <p>I am a highly resilient and confident individual, driven by curiosity...</p>
+      </div>
+      <div class="about-slide">
+        <h2>Personal Interests</h2>
+        <p>Cooking, reading, painting, traveling, family-oriented...</p>
+      </div>
+      <div class="about-slide">
+        <h2>Education</h2>
+        <p>B.Tech Computer Science, CGPA: 8.2/10...</p>
+      </div>
+      <div class="about-slide">
+        <h2>Career Goals</h2>
+        <p>Work globally in innovative projects and learning constantly...</p>
       </div>
     </div>
-    <button class="slide-btn right" onclick="nextSlide('about')">&#10095;</button>
-  </section>
+  </div>
+  <button class="slide-btn right" onclick="nextSlide('about')">&#10095;</button>
+</section>
 
-  <!-- ====== PROJECTS SLIDER ====== -->
-  <section class="project-slider" id="projects">
-    <h2 class="section-title">Projects</h2>
-    <button class="slide-btn left" onclick="prevSlide('projects')">&#10094;</button>
-    <div class="slide-wrapper">
-      <div class="slide-track">
-        <div class="project-slide active">
-          <h3>Project 1</h3>
-          <p>Description of Project 1</p>
-        </div>
-        <div class="project-slide">
-          <h3>Project 2</h3>
-          <p>Description of Project 2</p>
-        </div>
-        <div class="project-slide">
-          <h3>Project 3</h3>
-          <p>Description of Project 3</p>
-        </div>
-        <div class="project-slide">
-          <h3>Project 4</h3>
-          <p>Description of Project 4</p>
-        </div>
+<!-- PROJECT SECTION -->
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="card-front">
+        <h3>Project 1</h3>
+      </div>
+      <div class="card-back">
+        <p>Description of Project 1</p>
       </div>
     </div>
-    <button class="slide-btn right" onclick="nextSlide('projects')">&#10095;</button>
-  </section>
+    <div class="project-card">
+      <div class="card-front">
+        <h3>Project 2</h3>
+      </div>
+      <div class="card-back">
+        <p>Description of Project 2</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="card-front">
+        <h3>Project 3</h3>
+      </div>
+      <div class="card-back">
+        <p>Description of Project 3</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="card-front">
+        <h3>Project 4</h3>
+      </div>
+      <div class="card-back">
+        <p>Description of Project 4</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- ====== CONTACT INFO ====== -->
-  <section class="contact-section" id="contact">
-    <h2>Contact Me</h2>
-    <p>E-mail: haririya00@gmail.com</p>
-    <p>Phone: +91 7708808414</p>
-  </section>
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <h2>Contact Me</h2>
+  <p>E-mail: haririya00@gmail.com</p>
+  <p>Phone: +91 7708808414</p>
+</section>
 
-  <!-- ====== CHATBOT ====== -->
-  <section class="chatbot-section" id="chat">
-    <h2>Chat with Me</h2>
-    <div id="chat-box" class="chat-box"></div>
+<!-- CHATBOT -->
+<section class="chatbot-section">
+  <h2>Chat with Me</h2>
+  <div id="chat-box" class="chat-box"></div>
+  <div class="chat-input-group">
     <input type="text" id="user-input" placeholder="Type your message...">
     <button id="send-btn">Send</button>
-    <p class="note">You can chat with me via this bot or WhatsApp: <a href="https://wa.me/917708808414" target="_blank">7708808414</a></p>
-  </section>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <a href="https://wa.me/917708808414" target="_blank" class="whatsapp-btn">WhatsApp</a>
+  </div>
+  <div class="chat-quick-qa">
+    <button onclick="sendQuickMessage('skills')">My Skills</button>
+    <button onclick="sendQuickMessage('experience')">Experience</button>
+    <button onclick="sendQuickMessage('education')">Education</button>
+    <button onclick="sendQuickMessage('contact')">Contact Info</button>
+  </div>
+</section>
