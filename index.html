@@ -38,45 +38,32 @@
         <div class="about-slide about-bg-1">
           <i class="fas fa-user-circle slide-icon"></i>
           <h3>About Me</h3>
-          <p>
-            I am a <span class="highlight">resilient and confident</span> individual, driven by a deep curiosity for technology.  
-            My <span class="highlight">creative thinking</span> helps me approach challenges from unique angles.  
-            I thrive in <span class="highlight">dynamic environments</span> and constantly seek growth opportunities.
-          </p>
+          <p>Resilient, confident, and curious about technology...</p>
+          <button class="read-more" onclick="openModal(1)">Read More</button>
         </div>
 
         <!-- Slide 2 -->
         <div class="about-slide about-bg-2">
           <i class="fas fa-palette slide-icon"></i>
           <h3>Personal Interests</h3>
-          <p>
-            I love <span class="highlight">cooking, art, and painting</span>.  
-            I’m also an avid reader of <span class="highlight">Ravinder Singh</span> and the magical world of <span class="highlight">Harry Potter</span>.  
-            Traveling and <span class="highlight">nature</span> keep me inspired and grounded.
-          </p>
+          <p>Cooking, art, reading, and traveling...</p>
+          <button class="read-more" onclick="openModal(2)">Read More</button>
         </div>
 
         <!-- Slide 3 -->
         <div class="about-slide about-bg-3">
           <i class="fas fa-graduation-cap slide-icon"></i>
           <h3>Education</h3>
-          <p>
-            Pursuing <span class="highlight">B.Tech in Computer Science</span> at <span class="highlight">P.R.I.S.T. University</span> (graduation: 2026).  
-            <br> CGPA: <span class="highlight">8.2/10</span>  
-            <br> 10th: <span class="highlight">97%</span> (2016)  
-            <br> 12th: <span class="highlight">85%</span> (2018)
-          </p>
+          <p>Final-year B.Tech (CSE) student...</p>
+          <button class="read-more" onclick="openModal(3)">Read More</button>
         </div>
 
         <!-- Slide 4 -->
         <div class="about-slide about-bg-4">
           <i class="fas fa-bullseye slide-icon"></i>
           <h3>Career Goals</h3>
-          <p>
-            My goal is to work in a <span class="highlight">global tech team</span>,  
-            building <span class="highlight">innovative projects</span> that create real impact.  
-            Always <span class="highlight">fishing for new skills</span> in the vast digital ocean.
-          </p>
+          <p>Striving to work in a global tech team...</p>
+          <button class="read-more" onclick="openModal(4)">Read More</button>
         </div>
 
       </div>
@@ -84,6 +71,14 @@
     <button class="slide-btn right" onclick="nextSlide()" aria-label="Next Slide">&#10095;</button>
   </div>
 </section>
+
+<!-- ===== MODAL POPUP ===== -->
+<div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modal-text"></div>
+  </div>
+</div>
 
 
 <section class="projects-section" id="projects">
@@ -138,6 +133,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
