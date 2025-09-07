@@ -10,61 +10,90 @@
 
   <!-- ====== HEADER ====== -->
   <header class="hero">
-    <img src="profileimage.png" alt="Profile Image" class="profile-img">
+    <img src="profileimage.jpeg" alt="Profile Image" class="profile-img">
     <div class="header-content">
       <h1>Haripriya Durai</h1>
-      <p class="tagline"> | Merging creativity with code to build innovative digital experiences</p>
+      <p class="tagline">Merging creativity with code to build innovative digital experiences</p>
       <div class="hero-buttons">
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact</a>
+        <a href="#projects" target="_blank">My Works</a>
+        <a href="https://www.linkedin.com/in/hari-priya-7741b8193/" target="_blank">LinkedIn</a>
       </div>
     </div>
   </header>
 
   <!-- ====== ABOUT ME SLIDER ====== -->
   <section class="about-me-slider" id="about">
-    <button class="slide-btn left" onclick="prevSlide()" aria-label="Previous Slide">&#10094;</button>
+    <button class="slide-btn left" onclick="prevSlide('about')">&#10094;</button>
     <div class="slide-wrapper">
       <div class="slide-track">
         <div class="about-slide active">
           <div class="popup-tooltip">Know more about me!</div>
           <h2>About Me</h2>
-          <p>I am a highly resilient and confident individual, driven by a deep curiosity for how technology works. My creative thinking allows me to approach challenges from unique angles, leading to innovative solutions. I possess the strength and determination to overcome any setback, and my proven ability to rebuild from the ground up makes me a valuable asset in dynamic and fast-paced environments. My passion for learning and problem-solving fuels my desire to constantly grow and contribute meaningfully.</p>
+          <p>I am a highly resilient and confident individual, driven by a deep curiosity for how technology works...</p>
         </div>
         <div class="about-slide">
           <div class="popup-tooltip">My hobbies and passions</div>
           <h2>Personal Interests</h2>
-          <p>My interests outside of my professional life are diverse and fulfilling. I am a passionate cook and find creativity in both art and painting. I am also an avid reader, with a particular interest in the works of Ravinder Singh and the captivating world of Harry Potter. In my free time, I enjoy traveling and connecting with nature, which recharges my spirit. Above all, I am a family-oriented individual who cherishes these bonds, and I approach every new skill with a commitment to learning from the ground up.</p>
+          <p>My interests outside of my professional life are diverse and fulfilling...</p>
         </div>
         <div class="about-slide">
           <div class="popup-tooltip">Educational Background</div>
           <h2>Educational Background</h2>
-          <p>A highly motivated final-year B.Tech in Computer Science and Engineering student at P.R.I.S.T. University, Thanjavur, with an expected graduation in 2026. My academic journey is marked by a consistent record of excellence, evidenced by a strong CGPA of 8.2/10.0. This follows a stellar foundation, including a 97% score in my 10th standard (2016) and an 85% in my 12th standard (2018), demonstrating my dedication and a solid grasp of complex subjects. I am passionate about leveraging my skills to solve real-world problems.</p>
+          <p>A highly motivated final-year B.Tech in Computer Science and Engineering student...</p>
         </div>
         <div class="about-slide">
           <div class="popup-tooltip">My vision and goals</div>
           <h2>Career Goals</h2>
-          <p>Driven by a deep curiosity for the world of technology, I am actively "fishing" for new skills and knowledge in this vast digital ocean. My ultimate goal is to work within a global team, contributing to the development of innovative projects that make a real impact.</p>
+          <p>Driven by a deep curiosity for the world of technology...</p>
         </div>
       </div>
     </div>
-    <button class="slide-btn right" onclick="nextSlide()" aria-label="Next Slide">&#10095;</button>
+    <button class="slide-btn right" onclick="nextSlide('about')">&#10095;</button>
+  </section>
+
+  <!-- ====== PROJECTS SLIDER ====== -->
+  <section class="project-slider" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <button class="slide-btn left" onclick="prevSlide('projects')">&#10094;</button>
+    <div class="slide-wrapper">
+      <div class="slide-track">
+        <div class="project-slide active">
+          <h3>Project 1</h3>
+          <p>Description of Project 1</p>
+        </div>
+        <div class="project-slide">
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+        </div>
+        <div class="project-slide">
+          <h3>Project 3</h3>
+          <p>Description of Project 3</p>
+        </div>
+        <div class="project-slide">
+          <h3>Project 4</h3>
+          <p>Description of Project 4</p>
+        </div>
+      </div>
+    </div>
+    <button class="slide-btn right" onclick="nextSlide('projects')">&#10095;</button>
   </section>
 
   <!-- ====== CONTACT INFO ====== -->
-  <section id="Contact">
-    <p>E-mail: haririya00@gmail.com
-       Phone: +91 7708808414</p>
+  <section class="contact-section" id="contact">
+    <h2>Contact Me</h2>
+    <p>E-mail: haririya00@gmail.com</p>
+    <p>Phone: +91 7708808414</p>
   </section>
 
   <!-- ====== CHATBOT ====== -->
-  <section id="chat with me">
+  <section class="chatbot-section" id="chat">
+    <h2>Chat with Me</h2>
     <div id="chat-box" class="chat-box"></div>
     <input type="text" id="user-input" placeholder="Type your message...">
     <button id="send-btn">Send</button>
+    <p class="note">You can chat with me via this bot or WhatsApp: <a href="https://wa.me/917708808414" target="_blank">7708808414</a></p>
   </section>
 
   <script src="script.js"></script>
 </body>
 </html>
-
