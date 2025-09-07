@@ -212,6 +212,49 @@ body, html {
   box-shadow: 0 12px 25px rgba(0,0,0,0.6);
   border-color: #ff6600;
 }
+/* ====== CONTACT SECTION ====== */
+.contact-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.contact-btn {
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Different colors per button */
+.contact-btn.email { background: #ff6600; }
+.contact-btn.phone { background: #0077cc; }
+.contact-btn.linkedin { background: #0e76a8; }
+.contact-btn.github { background: #333; }
+
+.contact-btn i {
+  font-size: 1.3rem;
+}
+
+.contact-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
 
 /* ====== CHATBOT ====== */
 #chat-with-me {
@@ -251,3 +294,4 @@ body, html {
 @media (max-width: 768px) {
   .about-slide { width: 80vw; height: auto; }
 }
+
