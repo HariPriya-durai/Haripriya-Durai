@@ -105,37 +105,81 @@ body {
   position: relative;
   z-index: 2;
 }
+/* === About Me Carousel Styling === */
+.about-me-carousel {
+  padding: 60px 20px;
+  text-align: center;
+}
 
-/* Animation styles */
-.slide-in-right { animation: slideInRight 0.5s forwards; }
-.slide-out-left { animation: slideOutLeft 0.5s forwards; }
-.slide-in-left { animation: slideInLeft 0.5s forwards; }
-.slide-out-right { animation: slideOutRight 0.5s forwards; }
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
 
-@keyframes slideInRight {
-  from { transform: translateX(100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  padding: 10px 0;
+  scrollbar-width: none; /* Firefox */
 }
-@keyframes slideOutLeft {
-  from { transform: translateX(0); opacity: 1; }
-  to { transform: translateX(-100%); opacity: 0; }
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome */
 }
-@keyframes slideInLeft {
-  from { transform: translateX(-100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+
+.carousel-card {
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  min-width: 280px;
+  max-width: 280px;
+  flex: 0 0 auto;
+  padding: 20px;
+  color: white;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
-@keyframes slideOutRight {
-  from { transform: translateX(0); opacity: 1; }
-  to { transform: translateX(100%); opacity: 0; }
+.carousel-card:hover {
+  transform: scale(1.05);
 }
-/* Responsive */
+
+.carousel-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.carousel-btn {
+  background-color: #ff6600;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+.carousel-btn:hover {
+  background-color: #e05500;
+}
+
+.carousel-btn.left {
+  margin-right: 10px;
+}
+
+.carousel-btn.right {
+  margin-left: 10px;
+}
+
+/* === Mobile Styling === */
 @media (max-width: 600px) {
-  .profile-img { width: 90px; height: 90px; }
-  .header-content h1 { font-size: 2rem; }
-  .tagline { font-size: 1rem; }
-  .about-slide h2 { font-size: 1.5rem; }
-  .about-slide p { font-size: 1rem; }
-  .slide-btn { font-size: 1.5rem; padding: 8px 12px; }
+  .carousel-card {
+    min-width: 80vw;
+    max-width: 80vw;
+  }
 }
 
 
@@ -160,6 +204,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
