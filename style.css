@@ -95,9 +95,28 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
+.about-me-slider {
+  position: relative;
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 20px;
+  overflow: visible; /* allow popup */
+}
+
+.slide-wrapper {
+  width: 100%;
+  overflow: visible;
+}
+
+.slide-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
 .about-slide {
   flex: 0 0 calc(33.33% - 20px); /* 3 slides on desktop */
-  aspect-ratio: 105 / 148;       /* A6 ratio */
+  aspect-ratio: 52 / 74;         /* A8 portrait ratio */
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid #fff;
   border-radius: 12px;
@@ -106,21 +125,70 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+  padding: 15px;
   box-sizing: border-box;
 
-  /* popup effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, 
+              box-shadow 0.3s ease, 
+              border-color 0.3s ease, 
+              opacity 0.3s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .about-slide:hover {
-  transform: scale(1.08); /* popup zoom */
+  transform: scale(1.08);
   box-shadow: 0 12px 25px rgba(0,0,0,0.6);
-  border-color: #ff6600; /* glowing border */
-  z-index: 5; /* make sure it appears above neighbors */
+  border-color: #ff6600;
+  z-index: 5;
 }
 
+/* Dimming effect: when one card is hovered, others fade */
+.slide-track:has(.about-slide:hover) .about-slide:not(:hover) {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+/* Arrow buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.slide-btn:hover {
+  background: rgba(255, 102, 0, 0.8);
+}
+
+.slide-btn.left {
+  left: 10px;
+}
+
+.slide-btn.right {
+  right: 10px;
+}
+
+/* Responsive: tablet shows 2 slides */
+@media (max-width: 992px) {
+  .about-slide {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 768px) {
+  .about-slide {
+    flex: 0 0 calc(100% - 20px);
+  }
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -150,6 +218,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
