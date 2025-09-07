@@ -73,28 +73,6 @@ body {
 .hero-buttons a:hover {
   background-color: #e05500;
 }
-
-.about-me-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  max-width: 100%;
-  margin: 40px auto;
-  overflow: hidden;
-  padding: 0 20px;
-}
-
-.slide-wrapper {
-  overflow: hidden;
-  width: 100%;
-  max-width: 1000px;
-}
-
-.slide-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
 .about-slide {
   flex: 0 0 calc(33.33% - 20px); /* 3 slides visible */
   aspect-ratio: 105 / 148;       /* A6 proportion */
@@ -116,7 +94,6 @@ body {
   transform: translateY(-10px); /* lift effect */
   box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* deeper shadow */
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -146,6 +123,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
