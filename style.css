@@ -23,25 +23,31 @@ body, html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   width: 90%;
   max-width: 1200px;
 }
 
+/* Profile image takes 1/3 of header */
+.profile-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .profile-img {
-  width: 33%;
-  max-width: 250px;
+  width: 100%;
+  max-width: 250px; /* max width for large screens */
   height: auto;
   border-radius: 50%;
   border: 3px solid #fff;
   object-fit: cover;
-  margin-right: 40px;
 }
 
+/* Remaining 2/3 for name, tagline, buttons */
 .header-content {
-  width: 67%;
+  flex: 2;
   color: #fff;
-  text-align: left;
+  padding-left: 30px;
 }
 
 .header-content h1 {
@@ -62,10 +68,35 @@ body, html {
   border-radius: 30px;
   font-weight: bold;
   transition: background-color 0.3s;
+  text-decoration: none;
 }
 
 .hero-buttons a:hover {
   background-color: #e05500;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-section {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .header-content {
+    padding-left: 0;
+  }
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+  .hero-buttons a {
+    margin: 5px;
+  }
 }
 
 /* ====== ABOUT ME SLIDER ====== */
@@ -189,3 +220,4 @@ body, html {
   }
   .about-slide { width: 80vw; height: auto; }
 }
+
