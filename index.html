@@ -50,6 +50,36 @@
   <button class="slide-btn right" onclick="nextSlide()">&#10095;</button>
 </section>
 
+<script>
+  const track = document.querySelector('.slide-track');
+  const slides = document.querySelectorAll('.about-slide');
+  let currentIndex = 0;
+  const visibleSlides = 3; // show 3 slides at a time
+
+  function updateSlider() {
+    const slideWidth = slides[0].offsetWidth + 20; // include margin
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  function nextSlide() {
+    if (currentIndex < slides.length - visibleSlides) {
+      currentIndex++;
+      updateSlider();
+    }
+  }
+
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  }
+
+  // initialize
+  window.addEventListener("resize", updateSlider);
+  updateSlider();
+</script>
+
   <!-- =========================
        Projects Section
   ========================= -->
@@ -107,5 +137,6 @@
 
 </body>
 </html>
+
 
 
