@@ -22,32 +22,34 @@ body, html {
 .hero-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
   width: 90%;
   max-width: 1200px;
 }
 
-/* Profile image takes 1/3 of header */
+/* Profile Image Section: exactly 1/3 of header */
 .profile-section {
-  flex: 1;
+  width: 33.33%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-img {
-  width: 100%;
-  max-width: 250px; /* max width for large screens */
-  height: auto;
-  border-radius: 50%;
+  width: 90%;           /* Makes it fill most of the 1/3 space */
+  aspect-ratio: 1/1;    /* Makes it perfectly square */
+  border-radius: 50%;    /* Perfectly circular */
   border: 3px solid #fff;
   object-fit: cover;
 }
 
-/* Remaining 2/3 for name, tagline, buttons */
+/* Remaining 2/3 for text content */
 .header-content {
-  flex: 2;
-  color: #fff;
+  width: 66.66%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically centered */
   padding-left: 30px;
+  color: #fff;
 }
 
 .header-content h1 {
@@ -67,8 +69,8 @@ body, html {
   color: #fff;
   border-radius: 30px;
   font-weight: bold;
-  transition: background-color 0.3s;
   text-decoration: none;
+  transition: background-color 0.3s;
 }
 
 .hero-buttons a:hover {
@@ -82,10 +84,14 @@ body, html {
     text-align: center;
   }
   .profile-section {
-    justify-content: center;
+    width: 50%;
     margin-bottom: 20px;
   }
+  .profile-img {
+    width: 100%;
+  }
   .header-content {
+    width: 100%;
     padding-left: 0;
   }
   .header-content h1 {
@@ -220,4 +226,5 @@ body, html {
   }
   .about-slide { width: 80vw; height: auto; }
 }
+
 
