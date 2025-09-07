@@ -5,6 +5,13 @@ body, html {
   font-family: Arial, sans-serif;
   color: #ffffff;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* prevent horizontal scroll */
+  width: 100%;
+}
+
 
 a {
   text-decoration: none;
@@ -162,35 +169,33 @@ body {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
-/* A5-like sizing (portrait card style) */
-/* A5-like sizing (portrait card style) - narrower width */
+.about-me-slider {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 100vw;   /* prevent overflow */
+  overflow: hidden;   /* hide any overflow */
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
 .about-slide {
-  flex: 0 0 auto;
-  width: clamp(280px, 30vw, 350px);   /* slightly narrower than before */
-  height: clamp(450px, 60vh, 650px);  /* A5 height approx */
+  flex: 0 0 320px;   /* fixed width for A5 slide, fits smaller screens */
+  height: 500px;     /* A5 height */
+  margin: 0 auto;    /* center it */
   box-sizing: border-box;
   padding: 20px;
-  margin: 10px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255,255,255,0.05);
   border: 2px solid #fff;
   border-radius: 12px;
   text-align: center;
   color: #fff;
-  transition: transform 0.3s ease,
-              box-shadow 0.3s ease,
-              border-color 0.3s ease,
-              background 0.3s ease;
 }
-
-/* Popup & brighten ONLY on hover */
-.about-slide:hover {
-  transform: scale(1.08);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
-  border-color: #ff6600;
-  background: rgba(255, 255, 255, 0.12);
-  z-index: 5;
-}
-
 
 /* Arrows */
 .slide-btn {
@@ -247,6 +252,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
