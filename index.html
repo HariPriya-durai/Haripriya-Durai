@@ -1,31 +1,20 @@
+@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haripriya Durai - Interactive Resume</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- =========================
-       Header
-  ========================= -->
-  <header class="hero">
-    <!-- Profile image top-left -->
-    <img src="profileimage.jpeg" alt="Haripriya Durai" class="profile-img">
-    <!-- Header text -->
-    <div class="header-content">
-      <h1>Haripriya Durai</h1>
-      <p class="tagline">“Empowering Ideas Through Code & Creativity 🚀”</p>
-      <div class="hero-buttons">
-        <a href="#projects" class="cta-button">See My Work 🎨</a>
-        <a href="https://www.linkedin.com/in/hari-priya-7741b8193/" class="cta-button" target="_blank">LinkedIn Profile 🚀</a>
-      </div>
-    </div>
+@@ -26,35 +26,39 @@
   </header>
 
 <section class="about-me-slider">
+  <button class="slide-btn left" onclick="prevSlide()">&#10094;</button>
   <button class="slide-btn left" onclick="prevSlide()" aria-label="Previous Slide">&#10094;</button>
   <div class="slide-wrapper">
     <div class="slide-track">
@@ -51,6 +40,7 @@
       </div>
     </div>
   </div>
+  <button class="slide-btn right" onclick="nextSlide()">&#10095;</button>
   <button class="slide-btn right" onclick="nextSlide()" aria-label="Next Slide">&#10095;</button>
 </section>
 
@@ -58,59 +48,51 @@
   const track = document.querySelector('.slide-track');
   const slides = document.querySelectorAll('.about-slide');
   let currentIndex = 0;
+  const visibleSlides = 3; // show 3 slides at a time
   const visibleSlides = Math.min(1, slides.length); // only 1 at a time
 
   function updateSlider() {
     const slideWidth = slides[0].offsetWidth + 20; // include margin
-    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-  }
-
-  function nextSlide() {
-    if (currentIndex < slides.length - visibleSlides) {
-      currentIndex++;
-      updateSlider();
+@@ -75,7 +79,6 @@
     }
   }
 
-  function prevSlide() {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSlider();
-    }
-  }
-
+  // initialize
   window.addEventListener("resize", updateSlider);
   updateSlider();
 </script>
-
-  <!-- =========================
-       Projects Section
-  ========================= -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Interactive Resume:</strong> A live resume with animations and buttons linking to projects & LinkedIn.</li>
-      <li><strong>Portfolio Website:</strong> Personal portfolio showcasing projects and skills.</li>
-      <li><strong>Web App Demo:</strong> Example of a full-stack application built with modern technologies.</li>
-    </ul>
-  </section>
-
-  <!-- =========================
-       Skills Section
-  ========================= -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>HTML, CSS, JavaScript, React, Node.js, Python, Git, Responsive Design, UX/UI Basics</p>
-  </section>
-
-  <!-- =========================
-       Contact Section
-  ========================= -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: haripriya@example.com</p>
+@@ -109,35 +112,5 @@
     <p>Phone: +91 12345 67890</p>
   </section>
 
+  <script>
+    const slides = document.querySelectorAll('.about-slide');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'slide-in-right', 'slide-out-left', 'slide-in-left', 'slide-out-right');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      const prevIndex = currentIndex;
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[prevIndex].classList.add('slide-out-left');
+      slides[currentIndex].classList.add('slide-in-right', 'active');
+    }
+
+    function prevSlide() {
+      const prevIndex = currentIndex;
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      slides[prevIndex].classList.add('slide-out-right');
+      slides[currentIndex].classList.add('slide-in-left', 'active');
+    }
+  </script>
+
 </body>
 </html>
+
+
+
