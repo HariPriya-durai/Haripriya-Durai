@@ -73,129 +73,163 @@ body {
 .hero-buttons a:hover {
   background-color: #e05500;
 }
+
+/* ====== General Styling ====== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ====== Body Background ====== */
+body {
+  background: url('bg.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+/* ====== Header Styling ====== */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background: url('tech-dark-bg.jpg') no-repeat center center/cover;
+  padding: 20px;
+}
+
+.profile-img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+}
+
+.header-content h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons a {
+  margin: 0 10px;
+  padding: 0.8rem 1.5rem;
+  background-color: #ff6600;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.hero-buttons a:hover {
+  background-color: #e05500;
+}
+
+/* ====== About Me Slider ====== */
 .about-me-slider {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 100%;
+  width: 100vw;
   margin: 40px auto;
-  padding: 0 20px;
-  overflow: visible; /* allow popups to show */
+  overflow: hidden;
+  padding: 0 40px; /* space for arrows */
 }
 
 .slide-wrapper {
+  overflow: hidden;
   width: 100%;
-  overflow: visible; /* important fix */
 }
 
 .slide-track {
   display: flex;
-  gap: 20px;
   transition: transform 0.5s ease-in-out;
 }
 
-.about-me-slider {
-  position: relative;
-  width: 100%;
-  margin: 40px auto;
-  padding: 0 20px;
-  overflow: visible; /* allow popup */
-}
-
-.slide-wrapper {
-  width: 100%;
-  overflow: visible;
-}
-
-.slide-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease-in-out;
-}
-
+/* A8-like sizing (scaled to screen) */
 .about-slide {
-  flex: 0 0 calc(33.33% - 20px); /* 3 slides on desktop */
-  aspect-ratio: 52 / 74;         /* A8 portrait ratio */
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid #fff;
+  flex: 0 0 auto;
+  width: clamp(180px, 22vw, 260px);   /* responsive width */
+  height: clamp(250px, 35vh, 370px);  /* responsive height */
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #fff;
   border-radius: 12px;
   text-align: center;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 15px;
-  box-sizing: border-box;
-
   transition: transform 0.3s ease, 
               box-shadow 0.3s ease, 
               border-color 0.3s ease, 
               opacity 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.about-slide:hover {
+/* Popup + dim effect */
+.slide-track:hover .about-slide {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+.slide-track .about-slide:hover {
+  opacity: 1 !important;
   transform: scale(1.08);
   box-shadow: 0 12px 25px rgba(0,0,0,0.6);
   border-color: #ff6600;
   z-index: 5;
 }
 
-/* Dimming effect: when one card is hovered, others fade */
-.slide-track:has(.about-slide:hover) .about-slide:not(:hover) {
-  opacity: 0.5;
-  transform: scale(0.95);
-}
-
-/* Arrow buttons */
+/* Arrows */
 .slide-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   border: none;
   font-size: 2rem;
   color: #fff;
   padding: 10px 15px;
   cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
+  z-index: 20;
   transition: background 0.3s;
 }
-
-.slide-btn:hover {
-  background: rgba(255, 102, 0, 0.8);
-}
-
 .slide-btn.left {
   left: 10px;
 }
-
 .slide-btn.right {
   right: 10px;
 }
-
-/* Responsive: tablet shows 2 slides */
-@media (max-width: 992px) {
-  .about-slide {
-    flex: 0 0 calc(50% - 20px);
-  }
-}
-
-/* Mobile: 1 card per row */
-@media (max-width: 768px) {
-  .about-slide {
-    flex: 0 0 calc(100% - 20px);
-  }
+.slide-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .about-slide {
-    min-width: 100%; /* 1 slide at a time for mobile */
+    width: 80vw;   /* bigger on small screens */
+    height: auto;
+  }
+  .slide-btn {
+    font-size: 1.5rem;
+    padding: 8px 12px;
   }
 }
+
 
 /* =========================
    Responsive Design
@@ -218,6 +252,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
