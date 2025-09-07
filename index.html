@@ -27,34 +27,44 @@
 </header>
 
   <!-- ====== ABOUT ME SLIDER ====== -->
-  <section class="about-me-slider" id="about">
+  <!-- ====== ABOUT ME SECTION ====== -->
+<section class="about-me-section" id="about">
+  <h2 class="section-title">About Me</h2> <!-- Title added -->
+  <div class="about-me-slider">
     <button class="slide-btn left" onclick="prevSlide()" aria-label="Previous Slide">&#10094;</button>
     <div class="slide-wrapper">
       <div class="slide-track">
         <div class="about-slide active">
           <div class="popup-tooltip">Know more about me!</div>
-          <h2>About Me</h2>
           <p>I am a highly resilient and confident individual, driven by a deep curiosity for how technology works. My creative thinking allows me to approach challenges from unique angles, leading to innovative solutions.</p>
         </div>
         <div class="about-slide">
           <div class="popup-tooltip">My hobbies and passions</div>
-          <h2>Personal Interests</h2>
           <p>I am a passionate cook, avid reader, and enjoy traveling and connecting with nature. I cherish family bonds and approach every skill with dedication.</p>
         </div>
         <div class="about-slide">
           <div class="popup-tooltip">Educational Background</div>
-          <h2>Education</h2>
           <p>Final-year B.Tech in CSE at P.R.I.S.T University, CGPA 8.2/10. Strong academic foundation with 97% in 10th and 85% in 12th.</p>
         </div>
         <div class="about-slide">
           <div class="popup-tooltip">My vision and goals</div>
-          <h2>Career Goals</h2>
           <p>I aim to work in a global team contributing to innovative projects that make a real impact in technology.</p>
         </div>
       </div>
     </div>
     <button class="slide-btn right" onclick="nextSlide()" aria-label="Next Slide">&#10095;</button>
-  </section>
+  </div>
+</section>
+
+<!-- ====== PROJECTS SECTION ====== -->
+<section class="projects-section" id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-container">
+    <!-- Project cards will go here -->
+  </div>
+</section>
+
+
 
   <!-- ====== CONTACT INFO ====== -->
   <section id="contact">
@@ -72,6 +82,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
