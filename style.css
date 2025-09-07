@@ -95,57 +95,26 @@ body {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
-.about-me-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  max-width: 100%;
-  margin: 40px auto;
-  overflow: hidden;
-  padding: 0 20px;
-}
-
-.slide-wrapper {
-  overflow: hidden;
-  width: 100%;
-  max-width: 1000px;
-}
-
-.slide-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
 .about-slide {
-  min-width: 30%;   /* 3 slides at a time */
-  height: 400px;    /* portrait look */
-  box-sizing: border-box;
+  width: 250px;   /* approx A6 width */
+  height: 350px;  /* approx A6 height */
+  flex: 0 0 auto; /* prevent shrinking */
+  margin: 10px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid #fff;
-  margin: 10px;
   border-radius: 12px;
   text-align: center;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
 }
 
-.slide-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  font-size: 2rem;
-  color: #fff;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  transition: background 0.3s;
-}
-
-.slide-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
+.slide-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 /* Responsive: on mobile, show 1 slide at a time */
@@ -183,6 +152,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
