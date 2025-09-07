@@ -25,39 +25,34 @@
     </div>
   </header>
 
-  <!-- =========================
-       About Me Sliding Section
-  ========================= -->
-  <section class="about-me-slider">
-    <button class="slide-btn left" onclick="prevSlide()">&#10094;</button>
-    <div class="slide-wrapper">
-      <div class="about-slide active">
-        <h2>About Me</h2>
-        <p>
-          I am a creative and curious thinker passionate about technology. I enjoy understanding how digital systems work, from building interactive user interfaces to designing robust backend systems[...]
-        </p>
+<!-- =========================
+     About Me Carousel Section
+========================= -->
+<section class="about-me-carousel">
+  <h2>About Me</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+    <div class="carousel-track" id="aboutCarousel">
+      <div class="carousel-card">
+        <h3>About Me</h3>
+        <p>I’m a creative and curious thinker passionate about technology, user interfaces, and backend systems.</p>
       </div>
-      <div class="about-slide">
-        <h2>Personal Interests</h2>
-        <p>
-          I love exploring creativity through art, design, and content creation. I enjoy designing clothes, making videos, cooking, reading—especially Harry Potter—and traveling. I am learning ent[...]
-        </p>
+      <div class="carousel-card">
+        <h3>Personal Interests</h3>
+        <p>I enjoy designing, making videos, reading Harry Potter, traveling, and cooking!</p>
       </div>
-      <div class="about-slide">
-        <h2>Educational Background</h2>
-        <p>
-          I am pursuing B.Tech in Computer Science at PRIST University, Thanjavur, with a CGPA of 8.2. My schooling in Kumbakonam includes excellent results: 97% in 10th and 85% in 12th standard.
-        </p>
+      <div class="carousel-card">
+        <h3>Educational Background</h3>
+        <p>Pursuing B.Tech in Computer Science at PRIST University. 10th: 97%, 12th: 85%.</p>
       </div>
-      <div class="about-slide">
-        <h2>Career Goals</h2>
-        <p>
-          I aim to leverage my computer science knowledge and design skills to build visually appealing and user-friendly web interfaces. My goal is to create seamless experiences and innovative front[...]
-        </p>
+      <div class="carousel-card">
+        <h3>Career Goals</h3>
+        <p>To build user-friendly, creative web interfaces using both design & code.</p>
       </div>
     </div>
-    <button class="slide-btn right" onclick="nextSlide()">&#10095;</button>
-  </section>
+    <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>
+  </div>
+</section>
 
   <!-- =========================
        Projects Section
@@ -116,3 +111,4 @@
 
 </body>
 </html>
+
