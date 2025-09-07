@@ -162,12 +162,11 @@ body {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
-
-/* A6-like sizing (portrait card style) */
+/* A5-like sizing (portrait card style) */
 .about-slide {
   flex: 0 0 auto;
-  width: clamp(250px, 28vw, 350px);   /* A6 width approx */
-  height: clamp(370px, 48vh, 520px);  /* A6 height approx */
+  width: clamp(320px, 35vw, 450px);   /* A5 width approx */
+  height: clamp(450px, 60vh, 650px);  /* A5 height approx */
   box-sizing: border-box;
   padding: 20px;
   margin: 10px;
@@ -191,14 +190,6 @@ body {
   z-index: 5;
 }
 
-/* Popup & brighten ONLY on hover */
-.about-slide:hover {
-  transform: scale(1.08);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
-  border-color: #ff6600;
-  background: rgba(255, 255, 255, 0.12);
-  z-index: 5;
-}
 
 /* Arrows */
 .slide-btn {
@@ -255,6 +246,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
