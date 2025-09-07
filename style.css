@@ -1,31 +1,84 @@
 /* ====== General Styling ====== */
 body, html {
-margin: 0;
-padding: 0;
-font-family: Arial, sans-serif;
-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
 }
 html, body {
-margin: 0;
-padding: 0;
-overflow-x: hidden;  /* prevent horizontal scroll */
-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* prevent horizontal scroll */
+  width: 100%;
 }
 
 
 a {
-text-decoration: none;
+  text-decoration: none;
 }
-@@ -23,7 +22,6 @@
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
+
+/* ====== Body Background ====== */
+body {
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   /* Add any other body background styles as needed */
 }
 
 body {
-@@ -81,73 +79,6 @@
-background-color: #e05500;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('bg.jpg') no-repeat center center/cover;
+  color: #ffffff;
+}
+
+/* ====== Header Styling ====== */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background: url('tech-dark-bg.jpg') no-repeat center center/cover;
+  padding: 20px;
+}
+
+.profile-img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+}
+
+.header-content h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons a {
+  margin: 0 10px;
+  padding: 0.8rem 1.5rem;
+  background-color: #ff6600;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.hero-buttons a:hover {
+  background-color: #e05500;
 }
 
 /* ====== General Styling ====== */
@@ -97,233 +150,27 @@ body {
 /* ====== About Me Slider ====== */
 /* ====== About Me Slider ====== */
 .about-me-slider {
-display: flex;
-@@ -158,6 +89,7 @@
-margin: 40px auto;
-overflow: hidden;
-padding: 0 40px; /* space for arrows */
-  max-width: 100vw;
-}
-
-.slide-wrapper {
-@@ -169,32 +101,47 @@
-display: flex;
-transition: transform 0.5s ease-in-out;
-}
-.about-me-slider {
   display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  max-width: 100vw;   /* prevent overflow */
-  overflow: hidden;   /* hide any overflow */
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.slide-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-.about-slide {
-  flex: 0 0 320px;   /* fixed width for A5 slide, fits smaller screens */
-  height: 500px;     /* A5 height */
-  margin: 0 auto;    /* center it */
-  position: relative;
-  flex: 0 0 320px;
-  height: 500px;
-  margin: 0 auto;
-box-sizing: border-box;
-padding: 20px;
-  background: rgba(255,255,255,0.05);
-  background: rgba(255,255,255,0.08);
-border: 2px solid #fff;
-border-radius: 12px;
-text-align: center;
-color: #fff;
-  transition: filter 0.3s, box-shadow 0.3s;
-}
-
-/* Brighten effect on hover */
-.about-slide:hover {
-  filter: brightness(1.2);
-  box-shadow: 0 0 32px 8px rgba(255,255,255,0.2);
-}
-
-/* Popup tooltip on hover */
-.popup-tooltip {
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: -60px;
-  transform: translateX(-50%);
-  background: #fff;
-  color: #222;
-  padding: 10px 24px;
-  border-radius: 8px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
-  white-space: nowrap;
-  z-index: 10;
-  font-size: 1rem;
-  font-weight: 500;
-}
-.about-slide:hover .popup-tooltip {
-  display: block;
-}
-
-/* Arrows */
-@@ -208,7 +155,7 @@
-color: #fff;
-padding: 10px 15px;
-cursor: pointer;
-  z-index: 20;
-  z-index: 30;
-transition: background 0.3s;
-}
-.slide-btn.left {
-@@ -224,13 +171,11 @@
-/* Responsive */
-@media (max-width: 768px) {
-.about-slide {
-    width: 80vw;   /* full width on mobile */
-    width: 80vw;
-height: auto;
-}
-}
-
-
-
-/* =========================
-  Responsive Design
-========================= */
-@@ -239,7 +184,7 @@
-flex-direction: column;
-text-align: center;
-}
-  
-
-.header-left {
-margin-bottom: 20px;
-}
-@@ -252,33 +197,3 @@
-font-size: 1rem;
-}
-}
-
-
-
-/* ====== General Styling ====== */
-body, html {
-margin: 0;
-padding: 0;
-font-family: Arial, sans-serif;
-color: #ffffff;
-}
-html, body {
-margin: 0;
-padding: 0;
-overflow-x: hidden;  /* prevent horizontal scroll */
-width: 100%;
-}
-
-
-a {
-text-decoration: none;
-}
-@@ -23,7 +22,6 @@
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-  /* Add any other body background styles as needed */
-}
-
-body {
-@@ -81,73 +79,6 @@
-background-color: #e05500;
-}
-
-/* ====== General Styling ====== */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* ====== Body Background ====== */
-body {
-  background: url('bg.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-}
-
-/* ====== Header Styling ====== */
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  height: 100vh;
-  background: url('tech-dark-bg.jpg') no-repeat center center/cover;
-  padding: 20px;
-}
-
-.profile-img {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  object-fit: cover;
-}
-
-.header-content h1 {
-  font-size: 3rem;
-  margin: 0.5rem 0;
-}
-
-.tagline {
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero-buttons a {
-  margin: 0 10px;
-  padding: 0.8rem 1.5rem;
-  background-color: #ff6600;
-  color: #fff;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.hero-buttons a:hover {
-  background-color: #e05500;
-}
-
-/* ====== About Me Slider ====== */
-/* ====== About Me Slider ====== */
-.about-me-slider {
-display: flex;
-@@ -158,6 +89,7 @@
-margin: 40px auto;
-overflow: hidden;
-padding: 0 40px; /* space for arrows */
-  max-width: 100vw;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  margin: 40px auto;
+  overflow: hidden;
+  padding: 0 40px; /* space for arrows */
 }
 
 .slide-wrapper {
-@@ -169,32 +101,47 @@
-display: flex;
-transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+  width: 100%;
 }
+
+.slide-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+/* A5-like sizing (portrait card style) */
+/* A5-like sizing (portrait card style) - narrower width */
 .about-me-slider {
   display: flex;
   justify-content: center;
@@ -340,86 +187,89 @@ transition: transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
 }
 .about-slide {
+  flex: 0 0 auto;
+  width: clamp(280px, 30vw, 350px);   /* slightly narrower than before */
+  height: clamp(450px, 60vh, 650px);  /* A5 height approx */
   flex: 0 0 320px;   /* fixed width for A5 slide, fits smaller screens */
   height: 500px;     /* A5 height */
   margin: 0 auto;    /* center it */
-  position: relative;
-  flex: 0 0 320px;
-  height: 500px;
-  margin: 0 auto;
-box-sizing: border-box;
-padding: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.05);
   background: rgba(255,255,255,0.05);
-  background: rgba(255,255,255,0.08);
-border: 2px solid #fff;
-border-radius: 12px;
-text-align: center;
-color: #fff;
-  transition: filter 0.3s, box-shadow 0.3s;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease,
+              background 0.3s ease;
 }
 
-/* Brighten effect on hover */
+/* Popup & brighten ONLY on hover */
 .about-slide:hover {
-  filter: brightness(1.2);
-  box-shadow: 0 0 32px 8px rgba(255,255,255,0.2);
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  border-color: #ff6600;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 5;
 }
 
-/* Popup tooltip on hover */
-.popup-tooltip {
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: -60px;
-  transform: translateX(-50%);
-  background: #fff;
-  color: #222;
-  padding: 10px 24px;
-  border-radius: 8px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
-  white-space: nowrap;
-  z-index: 10;
-  font-size: 1rem;
-  font-weight: 500;
-}
-.about-slide:hover .popup-tooltip {
-  display: block;
-}
 
 /* Arrows */
-@@ -208,7 +155,7 @@
-color: #fff;
-padding: 10px 15px;
-cursor: pointer;
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
   z-index: 20;
-  z-index: 30;
-transition: background 0.3s;
+  transition: background 0.3s;
 }
 .slide-btn.left {
-@@ -224,13 +171,11 @@
+  left: 10px;
+}
+.slide-btn.right {
+  right: 10px;
+}
+.slide-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-.about-slide {
+  .about-slide {
     width: 80vw;   /* full width on mobile */
-    width: 80vw;
-height: auto;
-}
+    height: auto;
+  }
 }
 
 
 
 /* =========================
-  Responsive Design
+   Responsive Design
 ========================= */
-@@ -239,7 +184,7 @@
-flex-direction: column;
-text-align: center;
-}
-  
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.header-left {
-margin-bottom: 20px;
-}
-@@ -252,33 +197,3 @@
-font-size: 1rem;
-}
+  .header-left {
+    margin-bottom: 20px;
+  }
+
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
 }
