@@ -141,6 +141,7 @@ body {
 }
 
 /* ====== About Me Slider ====== */
+/* ====== About Me Slider ====== */
 .about-me-slider {
   display: flex;
   align-items: center;
@@ -162,11 +163,11 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-/* A8-like sizing (scaled to screen) */
+/* A7-like sizing (scaled to screen) */
 .about-slide {
   flex: 0 0 auto;
-  width: clamp(180px, 22vw, 260px);   /* responsive width */
-  height: clamp(250px, 35vh, 370px);  /* responsive height */
+  width: clamp(220px, 25vw, 300px);   /* A7 width */
+  height: clamp(310px, 38vh, 420px);  /* A7 height */
   box-sizing: border-box;
   padding: 20px;
   margin: 10px;
@@ -175,22 +176,17 @@ body {
   border-radius: 12px;
   text-align: center;
   color: #fff;
-  transition: transform 0.3s ease, 
-              box-shadow 0.3s ease, 
-              border-color 0.3s ease, 
-              opacity 0.3s ease;
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
 }
 
-/* Popup + dim effect */
-.slide-track:hover .about-slide {
-  opacity: 0.5;
-  transform: scale(0.95);
-}
-.slide-track .about-slide:hover {
-  opacity: 1 !important;
+/* Hover effect (popup + brighten) */
+.about-slide:hover {
   transform: scale(1.08);
   box-shadow: 0 12px 25px rgba(0,0,0,0.6);
   border-color: #ff6600;
+  background: rgba(255, 255, 255, 0.1);
   z-index: 5;
 }
 
@@ -221,7 +217,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .about-slide {
-    width: 80vw;   /* bigger on small screens */
+    width: 80vw;   /* 1 card per view */
     height: auto;
   }
   .slide-btn {
@@ -252,6 +248,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
