@@ -163,9 +163,10 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 /* A5-like sizing (portrait card style) */
+/* A5-like sizing (portrait card style) - narrower width */
 .about-slide {
   flex: 0 0 auto;
-  width: clamp(320px, 35vw, 450px);   /* A5 width approx */
+  width: clamp(280px, 30vw, 350px);   /* slightly narrower than before */
   height: clamp(450px, 60vh, 650px);  /* A5 height approx */
   box-sizing: border-box;
   padding: 20px;
@@ -246,6 +247,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
