@@ -42,6 +42,28 @@ function toggleBox(box) {
   }
 }
 
+/* ===== PROJECT SLIDER LOGIC ===== */
+let currentProject = 0;
+const slider = document.querySelector('.project-slider');
+const totalProjects = document.querySelectorAll('.project-slide').length;
+
+function showProject(index) {
+  if (index >= totalProjects) currentProject = 0;
+  else if (index < 0) currentProject = totalProjects - 1;
+  else currentProject = index;
+
+  slider.style.transform = `translateX(-${currentProject * 100}%)`;
+}
+
+function nextProject() {
+  showProject(currentProject + 1);
+}
+
+function prevProject() {
+  showProject(currentProject - 1);
+}
+
+
 
 /* ====== CHATBOT ====== */
 const chatBox = document.getElementById('chat-box');
@@ -68,6 +90,7 @@ sendBtn.addEventListener('click', sendMessage);
 userInput.addEventListener('keypress', function(e) {
   if (e.key === 'Enter') sendMessage();
 });
+
 
 
 
