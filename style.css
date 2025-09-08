@@ -205,106 +205,75 @@ body, html {
   align-items: center;
 }
 
-/* Project card */
+/* ===== PROJECT SLIDER ===== */
+.project-slider {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  width: 400%; /* 4 slides */
+}
+
+.project-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .project-card {
-  background: rgba(255,255,255,0.08);
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
   border-radius: 20px;
-  padding: 30px;
+  padding: 40px;
   width: 70%;
-  max-width: 600px;
+  max-width: 700px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeIn 1s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.8);
 }
 
 .project-card h3 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
   color: #ff6600;
 }
 
 .project-card p {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #ddd;
 }
 
 .project-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
-/* Buttons */
-.btn {
-  padding: 10px 20px;
+.project-buttons .btn {
+  padding: 12px 25px;
   border-radius: 30px;
-  font-size: 1rem;
+  font-weight: bold;
   text-decoration: none;
-  color: #fff;
   transition: all 0.3s ease;
 }
 
-.live-link { background: #ff6600; }
-.details-link { background: #0077cc; }
+.live-link { background: #ff6600; color: #fff; }
+.details-link { background: #0077cc; color: #fff; }
 
-.btn:hover {
+.project-buttons .btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  opacity: 0.9;
 }
 
-/* Nav buttons container */
-.project-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 40px;
-}
-
-.slide-btn {
-  background: #00000080;
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background 0.3s;
-}
-
-.slide-btn:hover {
-  background: #ff6600;
-}
-
-
-.project-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  gap: 10px;
-}
-
-.dot {
-  height: 12px;
-  width: 12px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.dot:hover {
-  transform: scale(1.2);
-}
-
-.dot.active {
-  background-color: #ff6600;
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ====== CONTACT SECTION ====== */
@@ -389,6 +358,7 @@ body, html {
 @media (max-width: 768px) {
   .about-slide { width: 80vw; height: auto; }
 }
+
 
 
 
