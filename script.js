@@ -48,6 +48,7 @@ const slider = document.querySelector('.project-slider');
 const slides = document.querySelectorAll('.project-slide');
 const dots = document.querySelectorAll('.dot');
 const totalProjects = slides.length;
+let autoSlideInterval;
 
 function showProject(index) {
   if (index >= totalProjects) currentProject = 0;
@@ -61,18 +62,38 @@ function showProject(index) {
   dots[currentProject].classList.add('active');
 }
 
-function nextProject() {
-  showProject(currentProject + 1);
+// Next & Prev
+function nextProject() { showProject(currentProject + 1); }
+function prevProject() { showProject(currentProject - 1); }
+function goToProject(index) { showProject(index); }
+
+// Auto slide every 5s
+function startAutoSlide() {
+  autoSlideInterval = setInterval(nextProject, 5000);
+}
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+  startAutoSlide(); // restart after manual navigation
 }
 
-function prevProject() {
-  showProject(currentProject - 1);
-}
+// Start autoplay
+startAutoSlide();
 
-function goToProject(index) {
-  showProject(index);
-}
-
+// Attach manual controls
+document.querySelector('.left').addEventListener('click', () => {
+  prevProject();
+  stopAutoSlide();
+});
+document.querySelector('.right').addEventListener('click', () => {
+  nextProject();
+  stopAutoSlide();
+});
+dots.forEach((dot, idx) => {
+  dot.addEventListener('click', () => {
+    goToProject(idx);
+    stopAutoSlide();
+  });
+});
 
 
 
@@ -101,6 +122,7 @@ sendBtn.addEventListener('click', sendMessage);
 userInput.addEventListener('keypress', function(e) {
   if (e.key === 'Enter') sendMessage();
 });
+
 
 
 
