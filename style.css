@@ -372,6 +372,7 @@ body, html {
   background: #ff6600;
 }
 
+
 /* ====== CONTACT SECTION ====== */
 .contact-section {
   text-align: center;
@@ -454,6 +455,7 @@ body, html {
 @media (max-width: 768px) {
   .about-slide { width: 80vw; height: auto; }
 }
+
 
 
 
