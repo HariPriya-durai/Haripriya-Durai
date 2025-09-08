@@ -248,12 +248,32 @@ body, html {
 
 
 /* ===== PROJECT SLIDER ===== */
+/* Section title */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Project container */
+.project-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  padding: 40px 0;
+}
+
+/* Slider */
 .project-slider {
   display: flex;
   transition: transform 0.6s ease-in-out;
   width: 400%; /* 4 slides */
 }
 
+/* Each slide */
 .project-slide {
   flex: 0 0 100%;
   display: flex;
@@ -261,61 +281,95 @@ body, html {
   align-items: center;
 }
 
+/* Project card */
 .project-card {
-  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
   border-radius: 20px;
-  padding: 40px;
+  padding: 30px;
   width: 70%;
-  max-width: 700px;
+  max-width: 650px;
+  min-height: 250px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: fadeIn 1s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
 }
 
 .project-card h3 {
   font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #ff6600;
+  margin-bottom: 10px;
 }
 
 .project-card p {
   font-size: 1.1rem;
-  margin-bottom: 25px;
-  color: #ddd;
+  margin-bottom: 20px;
 }
 
+/* Buttons */
 .project-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .project-buttons .btn {
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-.live-link { background: #ff6600; color: #fff; }
-.details-link { background: #0077cc; color: #fff; }
+.live-link { background: #ff6600; color: white; }
+.details-link { background: #007bff; color: white; }
+.live-link:hover { background: #e65c00; }
+.details-link:hover { background: #0056b3; }
 
-.project-buttons .btn:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
+/* Navigation buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 20px;
+  z-index: 10;
+  transition: background 0.3s ease;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+.nav-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.nav-btn.left { left: 20px; }
+.nav-btn.right { right: 20px; }
+
+/* Dots */
+.dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #ff6600;
 }
 
 /* ====== CONTACT SECTION ====== */
@@ -400,6 +454,7 @@ body, html {
 @media (max-width: 768px) {
   .about-slide { width: 80vw; height: auto; }
 }
+
 
 
 
