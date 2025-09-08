@@ -29,46 +29,32 @@
 
 <section class="about-me-section" id="about">
   <h2 class="section-title">About Me</h2>
-  <div class="about-me-slider">
-    <button class="slide-btn left" onclick="prevSlide()" aria-label="Previous Slide">&#10094;</button>
-    <div class="slide-wrapper">
-      <div class="slide-track">
+  <div class="about-me-grid">
 
-        <!-- Slide 1 -->
-        <div class="about-slide about-bg-1">
-          <i class="fas fa-user-circle slide-icon"></i>
-          <h3>About Me</h3>
-          <p>Resilient, confident, and curious about technology...</p>
-          <button class="read-more" onclick="openModal(1)">Read More</button>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="about-slide about-bg-2">
-          <i class="fas fa-palette slide-icon"></i>
-          <h3>Personal Interests</h3>
-          <p>Cooking, art, reading, and traveling...</p>
-          <button class="read-more" onclick="openModal(2)">Read More</button>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="about-slide about-bg-3">
-          <i class="fas fa-graduation-cap slide-icon"></i>
-          <h3>Education</h3>
-          <p>Final-year B.Tech (CSE) student...</p>
-          <button class="read-more" onclick="openModal(3)">Read More</button>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="about-slide about-bg-4">
-          <i class="fas fa-bullseye slide-icon"></i>
-          <h3>Career Goals</h3>
-          <p>Striving to work in a global tech team...</p>
-          <button class="read-more" onclick="openModal(4)">Read More</button>
-        </div>
-
-      </div>
+    <!-- Box 1 -->
+    <div class="about-box box1" onclick="openModal(1)">
+      <i class="fas fa-user-circle"></i>
+      <h3>More About Me</h3>
     </div>
-    <button class="slide-btn right" onclick="nextSlide()" aria-label="Next Slide">&#10095;</button>
+
+    <!-- Box 2 -->
+    <div class="about-box box2" onclick="openModal(2)">
+      <i class="fas fa-palette"></i>
+      <h3>Personal Interests</h3>
+    </div>
+
+    <!-- Box 3 -->
+    <div class="about-box box3" onclick="openModal(3)">
+      <i class="fas fa-graduation-cap"></i>
+      <h3>Educational Background</h3>
+    </div>
+
+    <!-- Box 4 -->
+    <div class="about-box box4" onclick="openModal(4)">
+      <i class="fas fa-bullseye"></i>
+      <h3>Career Goals</h3>
+    </div>
+
   </div>
 </section>
 
@@ -133,6 +119,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
