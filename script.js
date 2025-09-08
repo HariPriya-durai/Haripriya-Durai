@@ -43,57 +43,46 @@ function toggleBox(box) {
 }
 
 /* ===== PROJECT SLIDER LOGIC ===== */
-let currentProject = 0;
-const slider = document.querySelector('.project-slider');
-const slides = document.querySelectorAll('.project-slide');
-const dots = document.querySelectorAll('.dot');
-const totalProjects = slides.length;
-let autoSlideInterval;
+let currentSlide = 0;
+const slides = document.querySelectorAll(".project-slide");
+const slider = document.querySelector(".project-slider");
+const dots = document.querySelectorAll(".dot");
 
-function showProject(index) {
-  if (index >= totalProjects) currentProject = 0;
-  else if (index < 0) currentProject = totalProjects - 1;
-  else currentProject = index;
+function showSlide(index) {
+  if (index >= slides.length) currentSlide = 0;
+  else if (index < 0) currentSlide = slides.length - 1;
+  else currentSlide = index;
 
-  slider.style.transform = `translateX(-${currentProject * 100}%)`;
+  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-  // update dots
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[currentProject].classList.add('active');
+  // Update dots
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+  });
 }
 
-// Next & Prev
-function nextProject() { showProject(currentProject + 1); }
-function prevProject() { showProject(currentProject - 1); }
-function goToProject(index) { showProject(index); }
-
-// Auto slide every 5s
-function startAutoSlide() {
-  autoSlideInterval = setInterval(nextProject, 5000);
-}
-function stopAutoSlide() {
-  clearInterval(autoSlideInterval);
-  startAutoSlide(); // restart after manual navigation
-}
-
-// Start autoplay
-startAutoSlide();
-
-// Attach manual controls
-document.querySelector('.left').addEventListener('click', () => {
-  prevProject();
-  stopAutoSlide();
+// Next/Prev
+document.querySelector(".nav-btn.left").addEventListener("click", () => {
+  showSlide(currentSlide - 1);
 });
-document.querySelector('.right').addEventListener('click', () => {
-  nextProject();
-  stopAutoSlide();
+document.querySelector(".nav-btn.right").addEventListener("click", () => {
+  showSlide(currentSlide + 1);
 });
-dots.forEach((dot, idx) => {
-  dot.addEventListener('click', () => {
-    goToProject(idx);
-    stopAutoSlide();
+
+// Dot navigation
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    showSlide(i);
   });
 });
+
+// Auto slide every 5 seconds
+setInterval(() => {
+  showSlide(currentSlide + 1);
+}, 5000);
+
+// Init first slide
+showSlide(0);
 
 
 
@@ -122,6 +111,7 @@ sendBtn.addEventListener('click', sendMessage);
 userInput.addEventListener('keypress', function(e) {
   if (e.key === 'Enter') sendMessage();
 });
+
 
 
 
