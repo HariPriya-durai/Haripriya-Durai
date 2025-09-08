@@ -45,7 +45,9 @@ function toggleBox(box) {
 /* ===== PROJECT SLIDER LOGIC ===== */
 let currentProject = 0;
 const slider = document.querySelector('.project-slider');
-const totalProjects = document.querySelectorAll('.project-slide').length;
+const slides = document.querySelectorAll('.project-slide');
+const dots = document.querySelectorAll('.dot');
+const totalProjects = slides.length;
 
 function showProject(index) {
   if (index >= totalProjects) currentProject = 0;
@@ -53,6 +55,10 @@ function showProject(index) {
   else currentProject = index;
 
   slider.style.transform = `translateX(-${currentProject * 100}%)`;
+
+  // update dots
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[currentProject].classList.add('active');
 }
 
 function nextProject() {
@@ -62,6 +68,11 @@ function nextProject() {
 function prevProject() {
   showProject(currentProject - 1);
 }
+
+function goToProject(index) {
+  showProject(index);
+}
+
 
 
 
@@ -90,6 +101,7 @@ sendBtn.addEventListener('click', sendMessage);
 userInput.addEventListener('keypress', function(e) {
   if (e.key === 'Enter') sendMessage();
 });
+
 
 
 
