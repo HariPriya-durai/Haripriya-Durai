@@ -106,7 +106,7 @@ body, html {
   }
 }
 
-/* ===== BODY BACKGROUND ===== */
+/* ===== BODY BACKGROUND WITH OVERLAY ===== */
 body, html {
   margin: 0;
   padding: 0;
@@ -114,8 +114,16 @@ body, html {
   color: #fff;
   overflow-x: hidden;
   width: 100%;
-  background: url('bg.jpeg') no-repeat center center/cover;
+  min-height: 100vh;
+
+  /* background with overlay */
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* dark overlay */
+    url('bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #1a1a1a; /* fallback */
 }
+
 
 /* ===== ABOUT ME GRID ===== */
 .about-me-grid {
@@ -297,6 +305,7 @@ body, html {
 @media (max-width: 768px) {
   .about-slide { width: 80vw; height: auto; }
 }
+
 
 
 
