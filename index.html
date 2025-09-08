@@ -61,25 +61,55 @@
 
 <section class="projects-section" id="projects">
   <h2 class="section-title">Projects</h2>
-  <div class="projects-container">
-    <a href="https://your-portfolio-link.com" target="_blank" class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>Responsive personal website showcasing my projects and resume.</p>
-    </a>
-    <a href="https://github.com/yourusername/chatbot" target="_blank" class="project-card">
+  <div class="project-slider">
+
+    <!-- Slide 1 -->
+    <div class="project-slide">
       <h3>Chatbot App</h3>
       <p>Interactive chatbot built with JavaScript to answer user queries.</p>
-    </a>
-    <a href="https://github.com/yourusername/ecommerce" target="_blank" class="project-card">
+      <div class="project-buttons">
+        <a href="https://github.com/yourusername/chatbot" target="_blank" class="btn live-link">Live Link</a>
+        <a href="project1-details.html" target="_blank" class="btn details-link">Project Details</a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="project-slide">
       <h3>Mini E-commerce Site</h3>
       <p>A simple shopping site with dynamic cart functionality.</p>
-    </a>
-    <a href="https://github.com/yourusername/dataviz" target="_blank" class="project-card">
-      <h3>Data Visualization</h3>
-      <p>Dashboard displaying insights using charts and graphs.</p>
-    </a>
+      <div class="project-buttons">
+        <a href="https://github.com/yourusername/ecommerce" target="_blank" class="btn live-link">Live Link</a>
+        <a href="project2-details.html" target="_blank" class="btn details-link">Project Details</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="project-slide">
+      <h3>Interactive Portfolio Website</h3>
+      <p>Responsive personal website showcasing my projects and resume.</p>
+      <div class="project-buttons">
+        <a href="https://your-portfolio-link.com" target="_blank" class="btn live-link">Live Link</a>
+        <a href="project3-details.html" target="_blank" class="btn details-link">Project Details</a>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="project-slide">
+      <h3>Automated Testing Framework with AI</h3>
+      <p>Framework that leverages AI for intelligent test case generation.</p>
+      <div class="project-buttons">
+        <a href="https://github.com/yourusername/ai-testing" target="_blank" class="btn live-link">Live Link</a>
+        <a href="project4-details.html" target="_blank" class="btn details-link">Project Details</a>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Slider Navigation -->
+  <button class="slide-btn left" onclick="prevProject()">&#10094;</button>
+  <button class="slide-btn right" onclick="nextProject()">&#10095;</button>
 </section>
+
 
 <section class="contact-section" id="contact">
   <h2 class="section-title">Contact Me</h2>
@@ -111,6 +141,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
