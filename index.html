@@ -32,25 +32,25 @@
   <div class="about-me-grid">
 
     <!-- Box 1 -->
-    <div class="about-box box1" onclick="openModal(1)">
+    <div class="about-box box1" data-id="1" onclick="toggleBox(this)">
       <i class="fas fa-user-circle"></i>
       <h3>More About Me</h3>
     </div>
 
     <!-- Box 2 -->
-    <div class="about-box box2" onclick="openModal(2)">
+    <div class="about-box box2" data-id="2" onclick="toggleBox(this)">
       <i class="fas fa-palette"></i>
       <h3>Personal Interests</h3>
     </div>
 
     <!-- Box 3 -->
-    <div class="about-box box3" onclick="openModal(3)">
+    <div class="about-box box3" data-id="3" onclick="toggleBox(this)">
       <i class="fas fa-graduation-cap"></i>
       <h3>Educational Background</h3>
     </div>
 
     <!-- Box 4 -->
-    <div class="about-box box4" onclick="openModal(4)">
+    <div class="about-box box4" data-id="4" onclick="toggleBox(this)">
       <i class="fas fa-bullseye"></i>
       <h3>Career Goals</h3>
     </div>
@@ -119,6 +119,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
