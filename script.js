@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ================= HEADER ================= */
-  // Currently static. Add animations if needed (optional)
-
-  /* ================= ABOUT ME ================= */
+  /* ====== ABOUT ME TOGGLE ====== */
   const boxContent = {
     1: `<h3>About Me</h3>
         <p>I am a resilient and confident individual, driven by curiosity for technology.
@@ -27,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const d = b.querySelector('.details'); if(d) d.remove();
       }
     });
-
     if(box.classList.contains('expanded')){
       box.classList.remove('expanded');
       const d = box.querySelector('.details'); if(d) d.remove();
@@ -41,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  /* ================= PROJECT SLIDER ================= */
+  /* ====== PROJECT SLIDER ====== */
   const slider = document.querySelector('.project-slider');
   const slides = document.querySelectorAll('.project-slide');
   const dots = document.querySelectorAll('.dot');
@@ -49,10 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const rightBtn = document.querySelector('.nav-btn.right');
   let currentSlide = 0;
   const totalSlides = slides.length;
-  let autoInterval = null;
+  let autoInterval;
 
   function updateSlider() {
-    if(slides.length === 0) return;
     const slideWidth = slides[0].clientWidth;
     slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
     dots.forEach((dot,i) => dot.classList.toggle('active', i === currentSlide));
@@ -65,23 +60,41 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlider();
   }
 
-  if(leftBtn) leftBtn.addEventListener('click', () => { showSlide(currentSlide-1); restartAuto(); });
-  if(rightBtn) rightBtn.addEventListener('click', () => { showSlide(currentSlide+1); restartAuto(); });
-  dots.forEach((dot, idx) => dot.addEventListener('click', () => { showSlide(idx); restartAuto(); }));
+  function startAuto() {
+    stopAuto();
+    autoInterval = setInterval(() => { showSlide(currentSlide + 1); }, 5000);
+  }
 
-  function startAuto() { stopAuto(); autoInterval = setInterval(() => { showSlide(currentSlide+1); }, 5000); }
   function stopAuto() { if(autoInterval) clearInterval(autoInterval); }
   function restartAuto() { stopAuto(); startAuto(); }
+
+  leftBtn.addEventListener('click', () => { showSlide(currentSlide-1); restartAuto(); });
+  rightBtn.addEventListener('click', () => { showSlide(currentSlide+1); restartAuto(); });
+
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => { showSlide(idx); restartAuto(); });
+  });
+
+  // Responsive: update slider on window resize
+  window.addEventListener('resize', updateSlider);
 
   showSlide(0);
   startAuto();
 
-  /* ================= CHATBOT ================= */
+  /* ====== CHATBOT ====== */
   const chatIcon = document.getElementById('chat-icon');
   const chatBoxContainer = document.getElementById('chat-box-container');
   const closeChat = document.getElementById('close-chat');
   const messages = document.getElementById('chat-messages');
   const options = document.querySelectorAll('#quick-options button');
+
+  chatIcon.addEventListener('click', () => {
+    chatBoxContainer.classList.toggle('show');
+  });
+
+  closeChat.addEventListener('click', () => {
+    chatBoxContainer.classList.remove('show');
+  });
 
   const answers = {
     name: "I am Haripriya Durai, your digital assistant!",
@@ -92,14 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     contact: "You can reach me at haririya00@gmail.com or +91 7708808414.",
     other: "redirect"
   };
-
-  chatIcon.addEventListener('click', () => {
-    chatBoxContainer.classList.toggle('show');
-  });
-
-  closeChat.addEventListener('click', () => {
-    chatBoxContainer.classList.remove('show');
-  });
 
   options.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -121,8 +126,5 @@ document.addEventListener("DOMContentLoaded", () => {
     messages.appendChild(msg);
     messages.scrollTop = messages.scrollHeight;
   }
-
-  /* ================= CONTACT ================= */
-  // No JS needed; static links already work
 
 });
