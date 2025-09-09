@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ====== ABOUT ME TOGGLE ====== */
+  /* ===== ABOUT ME TOGGLE ===== */
   const boxContent = {
     1: `<h3>About Me</h3>
         <p>I am a resilient and confident individual, driven by curiosity for technology.
@@ -17,35 +17,39 @@ document.addEventListener("DOMContentLoaded", () => {
         I am always learning and exploring new skills.</p>`
   };
 
-  window.toggleBox = function(box) {
-    document.querySelectorAll('.about-box.expanded').forEach(b => {
-      if (b !== box) {
-        b.classList.remove('expanded');
-        const d = b.querySelector('.details'); if(d) d.remove();
+  const aboutBoxes = document.querySelectorAll('.about-box');
+  aboutBoxes.forEach(box => {
+    box.addEventListener('click', () => {
+      document.querySelectorAll('.about-box.expanded').forEach(b => {
+        if (b !== box) {
+          b.classList.remove('expanded');
+          const d = b.querySelector('.details'); if(d) d.remove();
+        }
+      });
+
+      if(box.classList.contains('expanded')){
+        box.classList.remove('expanded');
+        const d = box.querySelector('.details'); if(d) d.remove();
+      } else {
+        box.classList.add('expanded');
+        const id = box.getAttribute('data-id');
+        const details = document.createElement('div');
+        details.className = 'details';
+        details.innerHTML = boxContent[id] || '<p>No details provided.</p>';
+        box.appendChild(details);
       }
     });
-    if(box.classList.contains('expanded')){
-      box.classList.remove('expanded');
-      const d = box.querySelector('.details'); if(d) d.remove();
-    } else {
-      box.classList.add('expanded');
-      const id = box.getAttribute('data-id');
-      const details = document.createElement('div');
-      details.className = 'details';
-      details.innerHTML = boxContent[id] || '<p>No details provided.</p>';
-      box.appendChild(details);
-    }
-  };
+  });
 
-  /* ====== PROJECT SLIDER ====== */
+  /* ===== PROJECT SLIDER ===== */
   const slider = document.querySelector('.project-slider');
   const slides = document.querySelectorAll('.project-slide');
   const dots = document.querySelectorAll('.dot');
   const leftBtn = document.querySelector('.nav-btn.left');
   const rightBtn = document.querySelector('.nav-btn.right');
   let currentSlide = 0;
-  const totalSlides = slides.length;
   let autoInterval;
+  const totalSlides = slides.length;
 
   function updateSlider() {
     const slideWidth = slides[0].clientWidth;
@@ -62,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function startAuto() {
     stopAuto();
-    autoInterval = setInterval(() => { showSlide(currentSlide + 1); }, 5000);
+    autoInterval = setInterval(() => showSlide(currentSlide+1), 5000);
   }
 
   function stopAuto() { if(autoInterval) clearInterval(autoInterval); }
@@ -75,39 +79,20 @@ document.addEventListener("DOMContentLoaded", () => {
     dot.addEventListener('click', () => { showSlide(idx); restartAuto(); });
   });
 
-  // Responsive: update slider on window resize
   window.addEventListener('resize', updateSlider);
 
   showSlide(0);
   startAuto();
 
-  /* ====== CHATBOT ====== */
-
-const chatIcon = document.getElementById('chat-icon');
-const chatBoxContainer = document.getElementById('chat-box-container');
-const closeChat = document.getElementById('close-chat');
-
-chatIcon.addEventListener('click', () => {
-  chatBoxContainer.classList.toggle('show');
-});
-
-closeChat.addEventListener('click', () => {
-  chatBoxContainer.classList.remove('show');
-});
-
+  /* ===== CHATBOX ===== */
   const chatIcon = document.getElementById('chat-icon');
   const chatBoxContainer = document.getElementById('chat-box-container');
   const closeChat = document.getElementById('close-chat');
   const messages = document.getElementById('chat-messages');
   const options = document.querySelectorAll('#quick-options button');
 
-  chatIcon.addEventListener('click', () => {
-    chatBoxContainer.classList.toggle('show');
-  });
-
-  closeChat.addEventListener('click', () => {
-    chatBoxContainer.classList.remove('show');
-  });
+  chatIcon.addEventListener('click', () => chatBoxContainer.classList.toggle('show'));
+  closeChat.addEventListener('click', () => chatBoxContainer.classList.remove('show'));
 
   const answers = {
     name: "I am Haripriya Durai, your digital assistant!",
@@ -141,4 +126,3 @@ closeChat.addEventListener('click', () => {
   }
 
 });
-
