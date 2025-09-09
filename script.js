@@ -82,6 +82,19 @@ document.addEventListener("DOMContentLoaded", () => {
   startAuto();
 
   /* ====== CHATBOT ====== */
+
+const chatIcon = document.getElementById('chat-icon');
+const chatBoxContainer = document.getElementById('chat-box-container');
+const closeChat = document.getElementById('close-chat');
+
+chatIcon.addEventListener('click', () => {
+  chatBoxContainer.classList.toggle('show');
+});
+
+closeChat.addEventListener('click', () => {
+  chatBoxContainer.classList.remove('show');
+});
+
   const chatIcon = document.getElementById('chat-icon');
   const chatBoxContainer = document.getElementById('chat-box-container');
   const closeChat = document.getElementById('close-chat');
@@ -128,3 +141,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
