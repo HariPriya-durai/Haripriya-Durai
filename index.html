@@ -49,66 +49,74 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2 class="section-title">My Projects</h2>
-    <div class="project-container">
-      <div class="project-slider">
-        <div class="project-slide">
-          <div class="project-card" style="background: linear-gradient(135deg,#ff9966,#ff5e62);">
-            <h3>Chatbot App</h3>
-            <p>Interactive chatbot built with JavaScript to answer user queries.</p>
-            <div class="project-buttons">
-              <a href="https://github.com/yourusername/chatbot" target="_blank" class="btn live-link">Live Link</a>
-              <a href="project1-details.html" target="_blank" class="btn details-link">Project Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="project-slide">
-          <div class="project-card" style="background: linear-gradient(135deg,#36d1dc,#5b86e5);">
-            <h3>Mini e-commerce Site</h3>
-            <p>A simple shopping site with dynamic cart functionality.</p>
-            <div class="project-buttons">
-              <a href="https://github.com/yourusername/ecommerce" target="_blank" class="btn live-link">Live Link</a>
-              <a href="project2-details.html" target="_blank" class="btn details-link">Project Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="project-slide">
-          <div class="project-card" style="background: linear-gradient(135deg,#8e2de2,#4a00e0);">
-            <h3>Interactive Portfolio Website</h3>
-            <p>Responsive personal website showcasing my projects and resume.</p>
-            <div class="project-buttons">
-              <a href="https://github.com/yourusername/portfolio" target="_blank" class="btn live-link">Live Link</a>
-              <a href="project3-details.html" target="_blank" class="btn details-link">Project Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="project-slide">
-          <div class="project-card" style="background: linear-gradient(135deg,#11998e,#38ef7d);">
-            <h3>Automated Testing Framework with AI</h3>
-            <p>An AI-powered testing tool for automated software testing.</p>
-            <div class="project-buttons">
-              <a href="https://github.com/yourusername/ai-testing" target="_blank" class="btn live-link">Live Link</a>
-              <a href="project4-details.html" target="_blank" class="btn details-link">Project Details</a>
-            </div>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">My Projects</h2>
+  <div class="project-container">
+    <div class="project-slider">
+      
+      <div class="project-slide">
+        <div class="project-card" style="background: url('chatbot.jpg') center/cover no-repeat;">
+          <h3>Chatbot App</h3>
+          <p>Interactive chatbot built with JavaScript to answer user queries.</p>
+          <div class="project-buttons">
+            <a href="https://github.com/yourusername/chatbot" target="_blank" class="btn live-link">Live Link</a>
+            <a href="project1-details.html" target="_blank" class="btn details-link">Project Details</a>
           </div>
         </div>
       </div>
 
-      <!-- Navigation -->
-      <button class="nav-btn left">&#10094;</button>
-      <button class="nav-btn right">&#10095;</button>
+      <div class="project-slide">
+        <div class="project-card" style="background: url('ecom.jpg') center/cover no-repeat;">
+          <h3>Mini e-commerce Site</h3>
+          <p>A simple shopping site with dynamic cart functionality.</p>
+          <div class="project-buttons">
+            <a href="https://github.com/yourusername/ecommerce" target="_blank" class="btn live-link">Live Link</a>
+            <a href="project2-details.html" target="_blank" class="btn details-link">Project Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-slide">
+        <div class="project-card" style="background: url('portfolio.jpg') center/cover no-repeat;">
+          <h3>Interactive Portfolio Website</h3>
+          <p>Responsive personal website showcasing my projects and resume.</p>
+          <div class="project-buttons">
+            <a href="https://github.com/yourusername/portfolio" target="_blank" class="btn live-link">Live Link</a>
+            <a href="project3-details.html" target="_blank" class="btn details-link">Project Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-slide">
+        <div class="project-card" style="background: url('automation.jpg') center/cover no-repeat;">
+          <h3>Automated Testing Framework with AI</h3>
+          <p>An AI-powered testing tool for automated software testing.</p>
+          <div class="project-buttons">
+            <a href="https://github.com/yourusername/ai-testing" target="_blank" class="btn live-link">Live Link</a>
+            <a href="project4-details.html" target="_blank" class="btn details-link">Project Details</a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Dots -->
-    <div class="dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </section>
+    <!-- Navigation -->
+    <button class="nav-btn left">&#10094;</button>
+    <button class="nav-btn right">&#10095;</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+
+
 
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
@@ -121,28 +129,29 @@
     </div>
   </section>
 
-  <!-- CHATBOT -->
-  <div id="chat-widget">
-    <img src="chatbot-character.gif" id="chat-icon" alt="Chat Assistant">
-    <div id="chat-box-container">
-      <div id="chat-header">
-        <h4>Chat with Me!</h4>
-        <span id="close-chat">&times;</span>
-      </div>
-      <div id="chat-messages"></div>
-      <div id="quick-options">
-        <button data-answer="name">Name</button>
-        <button data-answer="skills">Skills</button>
-        <button data-answer="personal">Personal Interest</button>
-        <button data-answer="languages">Languages</button>
-        <button data-answer="projects">Projects</button>
-        <button data-answer="contact">Contact</button>
-        <button data-answer="other">Other</button>
-      </div>
+ <!-- CHATBOT -->
+<div id="chat-widget">
+  <div id="chat-popup">Chat with Me!</div>
+  <img src="chatbot-character.gif" id="chat-icon" alt="Chat Assistant">
+  <div id="chat-box-container">
+    <div id="chat-header">
+      <h4>Chat with Me!</h4>
+      <span id="close-chat">&times;</span>
+    </div>
+    <div id="chat-messages"></div>
+    <div id="quick-options">
+      <button data-answer="name">Name</button>
+      <button data-answer="skills">Skills</button>
+      <button data-answer="personal">Personal Interest</button>
+      <button data-answer="languages">Languages</button>
+      <button data-answer="projects">Projects</button>
+      <button data-answer="contact">Contact</button>
+      <button data-answer="other">Other</button>
     </div>
   </div>
-
+</div>
   <!-- LINK JS -->
   <script src="script.js"></script>
 </body>
 </html>
+
