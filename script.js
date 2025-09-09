@@ -79,88 +79,51 @@ document.addEventListener("DOMContentLoaded", () => {
   startAuto();
 
   /* ====== CHATBOT ====== */
-  document.addEventListener("DOMContentLoaded", () => {
+  const chatIcon = document.getElementById('chat-icon');
+const chatBoxContainer = document.getElementById('chat-box-container');
+const closeChat = document.getElementById('close-chat');
+const messages = document.getElementById('chat-messages');
+const options = document.querySelectorAll('#quick-options button');
 
-  const chatBox = document.getElementById('chat-box');
-  const userInput = document.getElementById('user-input');
-  const sendBtn = document.getElementById('send-btn');
-  const whatsappIcon = document.getElementById('whatsapp-link');
+chatIcon.addEventListener('click', () => {
+  chatBoxContainer.classList.toggle('show');
+});
 
-  // ===== Prefilled Questions =====
-  document.querySelectorAll('#chat-quick-questions button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      userInput.value = btn.getAttribute('data-question');
-      sendMessage();
-    });
-  });
+closeChat.addEventListener('click', () => {
+  chatBoxContainer.classList.remove('show');
+});
 
-  // ===== Send Message Function =====
-  function sendMessage() {
-    const input = userInput.value.trim();
-    if(!input) return;
+// Predefined answers
+const answers = {
+  name: "I am Haripriya Durai, your digital assistant!",
+  skills: "I know Python, Java, HTML, CSS, JavaScript, React...",
+  personal: "I love cooking, art, painting, reading, traveling.",
+  languages: "I speak English, Tamil, and Hindi.",
+  projects: "Chatbot App, Mini e-commerce site, Portfolio Website, AI Testing Framework.",
+  contact: "You can reach me at haririya00@gmail.com or +91 7708808414.",
+  other: "redirect" // special case
+};
 
-    addMessage(input, 'user-msg');
-    userInput.value = "";
+options.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.getAttribute('data-answer');
 
-    // Typing simulation
-    const botMsg = document.createElement('div');
-    botMsg.className = 'chat-message bot-msg';
-    botMsg.innerHTML = 'Typing...';
-    chatBox.appendChild(botMsg);
-    chatBox.scrollTop = chatBox.scrollHeight;
-
-    setTimeout(() => {
-      let reply = "Sorry, I didn’t understand that.";
-
-      if(/name/i.test(input)) reply = "I am Haripriya Durai, a creative developer!";
-      else if(/skills/i.test(input)) reply = "I know Python, Java, HTML, CSS, JavaScript, React and more!";
-      else if(/personal/i.test(input)) reply = "I love cooking, art, painting, reading, and traveling.";
-      else if(/languages/i.test(input)) reply = "I am fluent in English, Tamil, and Hindi.";
-      else if(/projects/i.test(input)) reply = "I have worked on Chatbot App, Mini e-commerce site, Portfolio website, AI Testing framework.";
-      else if(/contact/i.test(input)) reply = "You can reach me at haririya00@gmail.com or call +91 7708808414.";
-      else if(/live chat/i.test(input)){
-        reply = "Click the WhatsApp icon to start live chat!";
-        whatsappIcon.style.display = 'block';
-      }
-      else if(/schedule/i.test(input)){
-        reply = "Please select a suitable date and time to schedule a call.";
-        document.getElementById('scheduleModal').style.display = 'block';
-      }
-
-      botMsg.innerHTML = reply;
-      chatBox.scrollTop = chatBox.scrollHeight;
-
-    }, 800);
-  }
-
-  // ===== Helper: Add Message =====
-  function addMessage(text, className){
-    const msg = document.createElement('div');
-    msg.className = `chat-message ${className}`;
-    msg.textContent = text;
-    chatBox.appendChild(msg);
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }
-
-  sendBtn.addEventListener('click', sendMessage);
-  userInput.addEventListener('keypress', e => { if(e.key === 'Enter') sendMessage(); });
-
-  // ===== Schedule Modal =====
-  const modal = document.getElementById('scheduleModal');
-  const closeBtn = document.querySelector('.modal .close');
-  closeBtn.addEventListener('click', () => modal.style.display = 'none');
-
-  document.getElementById('schedule-submit').addEventListener('click', () => {
-    const datetime = document.getElementById('schedule-time').value;
-    if(datetime){
-      alert(`Thank you! Your call is scheduled at ${datetime}`);
-      modal.style.display = 'none';
+    if(key === 'other'){
+      // Redirect to WhatsApp
+      window.open("https://wa.me/917708808414?text=Hi%20Haripriya!", "_blank");
+      addMessage("Redirecting you to WhatsApp...", "bot-msg");
+    } else {
+      addMessage(btn.textContent, "user-msg");
+      setTimeout(() => addMessage(answers[key], "bot-msg"), 500);
     }
   });
-
-  // Close modal if clicked outside
-  window.addEventListener('click', e => {
-    if(e.target === modal) modal.style.display = 'none';
-  });
-
 });
+
+function addMessage(text, cls){
+  const msg = document.createElement('div');
+  msg.className = `chat-message ${cls}`;
+  msg.textContent = text;
+  messages.appendChild(msg);
+  messages.scrollTop = messages.scrollHeight;
+}
+
