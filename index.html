@@ -132,12 +132,29 @@
 </section>
 
 <!-- CHATBOT -->
-<section id="chat-with-me">
-  <div id="chat-box"></div>
-  <input type="text" id="user-input" placeholder="Type your message...">
-  <button id="send-btn">Send</button>
-</section>
+<!-- Floating Chat Icon -->
+<div id="chat-widget">
+  <img src="chatbot-character.gif" id="chat-icon" alt="Chat Assistant">
 
-<script src="script.js"></script>
-</body>
-</html>
+  <!-- Pop-out Chat Box -->
+  <div id="chat-box-container">
+    <div id="chat-header">
+      <h4>Chat with Me!</h4>
+      <span id="close-chat">&times;</span>
+    </div>
+    <div id="chat-messages"></div>
+
+    <!-- Prefilled Question Buttons -->
+    <div id="quick-options">
+      <button data-answer="name">Name</button>
+      <button data-answer="skills">Skills</button>
+      <button data-answer="personal">Personal Interest</button>
+      <button data-answer="languages">Languages</button>
+      <button data-answer="projects">Projects</button>
+      <button data-answer="contact">Contact</button>
+      <button data-answer="other">Other</button>
+    </div>
+  </div>
+</div>
+
+
