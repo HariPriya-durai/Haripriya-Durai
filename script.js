@@ -1,39 +1,37 @@
-document.addEventListener("DOMContentLoaded", () => {
-  /* ===== ABOUT ME TOGGLE (Click + Hover) ===== */
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ===== ABOUT ME CONTENT ===== */
   const boxContent = {
-    1: `<h3>About Me</h3>
-        <p>I am a resilient and confident individual, driven by curiosity for technology.
-        My creative thinking helps me approach challenges from unique angles.
-        I thrive in dynamic environments and constantly seek growth opportunities.</p>`,
-    2: `<h3>Personal Interests</h3>
-        <p>I love cooking, art, and painting. I’m also an avid reader of Ravinder Singh and Harry Potter.
-        Traveling and connecting with nature keeps me inspired and grounded.</p>`,
-    3: `<h3>Education</h3>
-        <p>Final-year B.Tech student in Computer Science and Engineering at P.R.I.S.T. University, graduating 2026.
-        <br>CGPA: 8.2/10 <br>10th: 97% <br>12th: 85%</p>`,
-    4: `<h3>Career Goals</h3>
-        <p>Goal is to work in a global tech team, contributing to innovative projects that make a real impact.
-        I am always learning and exploring new skills.</p>`
+    education: `<p>I am pursuing Computer Science and Engineering at XYZ University.</p>`,
+    skills: `<p>Skilled in Python, JavaScript, React, HTML, CSS, and problem solving.</p>`,
+    hobbies: `<p>I enjoy cooking, art, and reading novels in my free time.</p>`
   };
 
   const aboutBoxes = document.querySelectorAll('.about-box');
+
   aboutBoxes.forEach(box => {
     box.addEventListener('click', () => toggleExpand(box));
-    box.addEventListener('mouseenter', () => { if (!box.classList.contains('expanded')) toggleExpand(box); });
-    box.addEventListener('mouseleave', () => { if (box.classList.contains('expanded')) toggleExpand(box); });
+    box.addEventListener('mouseenter', () => {
+      if (!box.classList.contains('expanded')) toggleExpand(box);
+    });
+    box.addEventListener('mouseleave', () => {
+      if (box.classList.contains('expanded')) toggleExpand(box);
+    });
   });
 
   function toggleExpand(box) {
     document.querySelectorAll('.about-box.expanded').forEach(b => {
       if (b !== box) {
         b.classList.remove('expanded');
-        const d = b.querySelector('.details'); if (d) d.remove();
+        const d = b.querySelector('.details');
+        if (d) d.remove();
       }
     });
 
     if (box.classList.contains('expanded')) {
       box.classList.remove('expanded');
-      const d = box.querySelector('.details'); if (d) d.remove();
+      const d = box.querySelector('.details');
+      if (d) d.remove();
     } else {
       box.classList.add('expanded');
       const id = box.getAttribute('data-id');
@@ -95,4 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
         let response = '';
         switch (answerType) {
           case 'name': response = "Hi! I'm Haripriya Durai, a Computer Science student."; break;
-          case 'skills': response = "I work with Python, JavaScript,
+          case 'skills': response = "I work with Python, JavaScript, React, HTML/CSS, and love problem solving."; break;
+          case 'projects': response = "I’ve built a chatbot, e-commerce site, and portfolio website."; break;
+          case 'contact': response = "You can email me at haririya00@gmail.com or call +91 7708808414."; break;
+          default: response = "Thanks for reaching out!"; break;
+        }
+        addMessage(response, 'bot-msg');
+      }, 600);
+    });
+  });
+
+});
