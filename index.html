@@ -1,85 +1,163 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haripriya Durai - Portfolio</title>
+  <title>Haripriya Durai - Interactive Resume</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <h1>Haripriya Durai</h1>
-    <div class="header-buttons">
-      <a href="https://linkedin.com/in/haripriya-durai" target="_blank">LinkedIn</a>
-      <a href="https://github.com/HariPriya-durai" target="_blank">GitHub</a>
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-container">
+      <div class="profile-section">
+        <img src="profileimage.jpeg" alt="Profile Image" class="profile-img">
+      </div>
+      <div class="header-content">
+        <h1>Haripriya Durai</h1>
+        <p class="tagline">Merging creativity with code to build innovative digital experiences</p>
+        <div class="hero-buttons">
+          <a href="#about">About Me</a>
+          <a href="https://www.linkedin.com/in/hari-priya-7741b8193/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- ===== ABOUT ME ===== -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <div class="about-box" data-id="education">
-        <h3>Education</h3>
+  <!-- ABOUT ME -->
+  <section class="about-me-section" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-me-grid">
+      <div class="about-box box1" data-id="1" onclick="toggleBox(this)">
+        <i class="fas fa-user-circle"></i>
+        <h3>More About Me</h3>
       </div>
-      <div class="about-box" data-id="skills">
-        <h3>Skills</h3>
+      <div class="about-box box2" data-id="2" onclick="toggleBox(this)">
+        <i class="fas fa-palette"></i>
+        <h3>Personal Interests</h3>
       </div>
-      <div class="about-box" data-id="hobbies">
-        <h3>Hobbies</h3>
+      <div class="about-box box3" data-id="3" onclick="toggleBox(this)">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Educational Background</h3>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-wrapper">
-      <div class="project-slider">
-        <div class="project-slide">
-          <h3>Portfolio Website</h3>
-          <p>A responsive portfolio site with interactive UI.</p>
-        </div>
-        <div class="project-slide">
-          <h3>Chatbot</h3>
-          <p>An interactive chatbot using JavaScript.</p>
-        </div>
-        <div class="project-slide">
-          <h3>E-commerce App</h3>
-          <p>A simple e-commerce site with product management.</p>
-        </div>
-      </div>
-
-      <!-- Navigation -->
-      <button class="nav-btn left">&#10094;</button>
-      <button class="nav-btn right">&#10095;</button>
-      <div class="dots">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+      <div class="about-box box4" data-id="4" onclick="toggleBox(this)">
+        <i class="fas fa-bullseye"></i>
+        <h3>Career Goals</h3>
       </div>
     </div>
   </section>
 
-  <!-- ===== CHATBOT ===== -->
-  <img src="chat-icon.png" id="chat-icon" alt="Chatbot">
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">My Projects</h2>
+  <div class="project-container">
+    <div class="project-slider">
+      
+      <div class="project-slide">
+        <div class="project-card" style="background: url('chatbot.jpg') center/cover no-repeat;">
+          <h3>Chatbot App</h3>
+          <p>Interactive chatbot built with JavaScript to answer user queries.</p>
+          <div class="project-buttons">
+            <a href="https://github.com/yourusername/chatbot" target="_blank" class="btn live-link">Live Link</a>
+            <a href="project1-details.html" target="_blank" class="btn details-link">Project Details</a>
+          </div>
+        </div>
+      </div>
 
+      <div class="project-slide">
+        <div class="project-card" style="background: url('ecom.jpg') center/cover no-repeat;">
+          <h3>Mini e-commerce Site</h3>
+          <p>A simple shopping site with dynamic cart functionality.</p>
+          <div class="project-buttons">
+            <a href="https://github.com/yourusername/ecommerce" target="_blank" class="btn live-link">Live Link</a>
+            <a href="project2-details.html" target="_blank" class="btn details-link">Project Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-slide">
+        <div class="project-card" style="background: url('portfolio.jpg') center/cover no-repeat;">
+          <h3>Interactive Portfolio Website</h3>
+          <p>Responsive personal website showcasing my projects and resume.</p>
+          <div class="project-buttons">
+            <a href="https://github.com/yourusername/portfolio" target="_blank" class="btn live-link">Live Link</a>
+            <a href="project3-details.html" target="_blank" class="btn details-link">Project Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-slide">
+        <div class="project-card" style="background: url('automation.jpg') center/cover no-repeat;">
+          <h3>Automated Testing Framework with AI</h3>
+          <p>An AI-powered testing tool for automated software testing.</p>
+          <div class="project-buttons">
+            <a href="https://github.com/yourusername/ai-testing" target="_blank" class="btn live-link">Live Link</a>
+            <a href="project4-details.html" target="_blank" class="btn details-link">Project Details</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <button class="nav-btn left">&#10094;</button>
+    <button class="nav-btn right">&#10095;</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+
+
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-buttons">
+      <a href="mailto:haririya00@gmail.com" class="contact-btn email"><i class="fas fa-envelope"></i> Email</a>
+      <a href="tel:+917708808414" class="contact-btn phone"><i class="fas fa-phone"></i> Call</a>
+      <a href="https://www.linkedin.com/in/hari-priya-7741b8193/" target="_blank" class="contact-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/HariPriya-durai" target="_blank" class="contact-btn github"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </section>
+
+ <!-- CHATBOT -->
+<!-- CHATBOT WIDGET -->
+<div id="chat-widget">
+  <div id="chat-popup">Chat with Me!</div>
+  <img src="chatbot-character.gif" id="chat-icon" alt="Chat Assistant">
+  
+  <!-- Chat Box -->
   <div id="chat-box-container">
-    <div class="chat-box-header">
-      <h3>Chatbot</h3>
+    <div id="chat-header">
+      <h4>Chat with Me!</h4>
       <span id="close-chat">&times;</span>
     </div>
     <div id="chat-messages"></div>
     <div id="quick-options">
-      <button data-answer="name">Who are you?</button>
-      <button data-answer="skills">Your skills?</button>
-      <button data-answer="projects">Your projects?</button>
-      <button data-answer="contact">Contact info</button>
+      <button data-answer="name">Name</button>
+      <button data-answer="skills">Skills</button>
+      <button data-answer="personal">Personal Interest</button>
+      <button data-answer="languages">Languages</button>
+      <button data-answer="projects">Projects</button>
+      <button data-answer="contact">Contact</button>
+      <button data-answer="other">Other</button>
     </div>
   </div>
+</div>
 
-  <script src="script.js" defer></script>
+  <!-- LINK JS -->
+  <script src="script.js"></script>
 </body>
 </html>
+
+
